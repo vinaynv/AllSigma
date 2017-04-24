@@ -1,0 +1,2 @@
+cd /usr/local/pentaho_bi_suite/pentaho/design-tools/data-integration
+./pan.sh -file=/usr/local/data/bi_data/ETL/Production/AncillaryReportScripts/AncillaryReportMailForLocalUsers.ktr -level=Detailed > /usr/local/data/bi_data/logs/AncillaryReportMailForLocalUsers.log

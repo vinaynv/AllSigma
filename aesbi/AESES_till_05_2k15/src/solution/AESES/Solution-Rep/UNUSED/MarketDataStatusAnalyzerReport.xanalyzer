@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportRecord xmlns="http://www.pentaho.com">
+    <commonStorageAttributes update="2014-01-22T14:34:31" created="2014-01-22T14:34:31" updatedBy="nagraj.rao@sigmainfo.net" createdBy="nagraj.rao@sigmainfo.net">
+        <path name="MarketDataStatusAnalyzerReport"/>
+    </commonStorageAttributes>
+    <report freezeRows="true" freezeColumns="true" autoRefresh="true" version="7" showDrillLinks="false" emptyCellDisplay="-" showEmptyCells="false" useNonVisualTotals="false" showColumnGrandTotal="false" showRowGrandTotal="false" reportTypeEnum="PIVOT" cube="MarketDataStatus" catalog="MarketDataStatus">
+        <measures/>
+        <columnAttributes/>
+        <rowAttributes>
+            <attribute sortOrderEnum="DESC" showSubtotal="false" formula="[iso].[iso]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="ISO" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[market].[market]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Market" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[service].[service]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Service" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[zone].[zone]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Zone" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[maxdate].[maxdate]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Latest Date" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[status].[status]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Status" locale=""/>
+                </displayLabels>
+            </attribute>
+        </rowAttributes>
+        <filters/>
+        <chartOptions legendFontFamily="Default" labelFontFamily="Default" legendStyle="PLAIN" legendColor="#000000" legendSize="12" legendBackgroundColor="#ffffff" labelStyle="PLAIN" backgroundColorEnd="#ffffff" maxChartsPerRow="3" backgroundFill="NONE" labelSize="12" labelColor="#000000" backgroundColor="#ffffff" maxValues="100" lineShape="CIRCLE" lineWidth="2" displayUnitsSecondary="UNITS_0" autoRangeSecondary="true" displayUnits="UNITS_0" autoRange="true" showLegend="true" legendPosition="RIGHT" customChartType="ccc_bar" chartType="CUSTOM"/>
+        <selectionFilters/>
+        <selectionItems/>
+        <pageSetup excelScalingPageTall="1" excelScalingPageWide="1" excelScalingPercent="100" excelScalingType="PERCENT" pdfOrientation="LANDSCAPE" excelOrientation="LANDSCAPE" pdfPageSize="LETTER" excelPageSize="LETTER"/>
+    </report>
+    <uiAttributes showFilterPanel="false" showFieldLayout="false" showFieldList="false">
+        <rowFieldWidths actualWidths="80,144,180,142,80,210"/>
+        <columnDataFieldWidths actualWidths=""/>
+        <pluginData>[]</pluginData>
+    </uiAttributes>
+</reportRecord>

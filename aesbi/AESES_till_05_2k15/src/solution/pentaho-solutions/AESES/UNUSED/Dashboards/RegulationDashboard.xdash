@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dashboard>
+<title>RegulationDashboard</title>
+<heading>Regulation </heading>
+<enableWidgetPrinting>false</enableWidgetPrinting>
+<documentation>
+<author>nagraj.rao@sigmainfo.net</author>
+<description/>
+<icon/>
+</documentation>
+<template-ref>xul/11-1-by-1.xul</template-ref>
+<theme-ref>10-Slate</theme-ref>
+<layout>
+<overlay xmlns:pho="http://www.pentaho.com">
+<box id="Panel_1" pho:title="Market Prices Report : Ancillary Prices" type="titled-panel" flex="1" collapsed="false"/>
+<box id="Panel_2" pho:title="Untitled 2"/>
+<box id="Panel_3" pho:title="Untitled 3"/>
+<box id="Panel_4" pho:title="Untitled 4"/>
+<box id="Panel_5" pho:title="Untitled 5"/>
+<box id="Panel_6" pho:title="Untitled 6"/>
+<box id="Panel_7" pho:title="Untitled 7"/>
+<box id="Panel_8" pho:title="Untitled 8"/>
+<box id="Panel_9" pho:title="Untitled 9"/>
+<box id="Panel_10" pho:title="Untitled 10"/>
+<box id="titlebar" title="" height="23" hidden="false" width="0" type="pagetitle" collapsed="false"/><box id="widget-area" type="scrollarea"/><box id="widget-area" flex="1"/><box id="FilterPanel" title="" height="100" hidden="true" width="0" type="povpanel" collapsed="false"/><box id="hbox1" type="layout"/><box id="hbox1" flex="1"/></overlay>
+</layout>
+<parameters>
+</parameters>
+
+<widgetJavascript><![CDATA[%5B%7B%22localizedName%22%3A%22AncillaryPricesChart%22%2C%22GUID%22%3A%2211957%22%2C%22iframe%22%3Atrue%2C%22parameters%22%3A%7B%22aC%22%3A%7B%22d%22%3A%22%5B%5BLjava.lang.String%3B%22%2C%22c%22%3A4%2C%22tI%22%3A0%2C%22b%22%3Anull%7D%2C%22tI%22%3A881%2C%22qI%22%3A67%7D%2C%22outputParameters%22%3A%5B%5B%22iso%22%2Cfalse%2C%2211957%24%5Biso%5D.%5Biso%5D%22%5D%2C%5B%22market%22%2Cfalse%2C%2211957%24%5Bmarket%5D.%5Bmarket%5D%22%5D%2C%5B%22Timestamp%22%2Cfalse%2C%2211957%24%5BTimestamp%5D.%5BTimestamp%5D%22%5D%2C%5B%22service%22%2Cfalse%2C%2211957%24%5Bservice%5D.%5Bservice%5D%22%5D%5D%2C%22name%22%3A%22widget1%22%2C%22htmlObject%22%3A%22content-area-Panel_1%22%2C%22xactionPath%22%3A%22AESES%2FUNUSED%2FDashboards%2FAncillaryPricesChart.xanalyzer%22%2C%22solution%22%3A%22AESES%22%2C%22path%22%3A%22UNUSED%2FDashboards%22%2C%22action%22%3A%22AncillaryPricesChart.xanalyzer%22%2C%22staticParameters%22%3Atrue%2C%22isDirty%22%3Afalse%2C%22listeners%22%3A%5B%5D%2C%22refreshPeriod%22%3A0%2C%22type%22%3A%22AnalyzerComponent%22%2C%22executeAtStart%22%3Atrue%2C%22iconImgSrc%22%3A%22..%2F..%2F..%2F..%2F..%2Fcontent%2Fanalyzer%2Fimages%2Fanalysis_report_file_icon.png%22%2C%22visible%22%3Atrue%7D%5D]]></widgetJavascript>
+<widgets><widget jsonType="object"><htmlObject jsonType="string">content-area-Panel_1</htmlObject><GUID jsonType="string">11957</GUID><visible jsonType="string">true</visible><isDirty jsonType="string">false</isDirty><type jsonType="string">AnalyzerComponent</type><refreshPeriod jsonType="string">0</refreshPeriod><solution jsonType="string">AESES</solution><staticParameters jsonType="string">true</staticParameters><xactionPath jsonType="string">AESES/UNUSED/Dashboards/AncillaryPricesChart.xanalyzer</xactionPath><outputParameters jsonType="object"><parameter0 jsonType="object"><id jsonType="string">11957__dollar_[iso].[iso]</id><enabled jsonType="string">false</enabled><name jsonType="string">iso</name></parameter0><parameter2 jsonType="object"><id jsonType="string">11957__dollar_[Timestamp].[Timestamp]</id><enabled jsonType="string">false</enabled><name jsonType="string">Timestamp</name></parameter2><parameter1 jsonType="object"><id jsonType="string">11957__dollar_[market].[market]</id><enabled jsonType="string">false</enabled><name jsonType="string">market</name></parameter1><parameter3 jsonType="object"><id jsonType="string">11957__dollar_[service].[service]</id><enabled jsonType="string">false</enabled><name jsonType="string">service</name></parameter3></outputParameters><localizedName jsonType="string">AncillaryPricesChart</localizedName><iframe jsonType="string">true</iframe><executeAtStart jsonType="string">true</executeAtStart><name jsonType="string">widget1</name><path jsonType="string">UNUSED/Dashboards</path><action jsonType="string">AncillaryPricesChart.xanalyzer</action><parameters jsonType="object"/><iconImgSrc jsonType="string">../../../../../content/analyzer/images/analysis_report_file_icon.png</iconImgSrc></widget></widgets></dashboard>

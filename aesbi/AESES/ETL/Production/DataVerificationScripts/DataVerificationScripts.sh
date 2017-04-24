@@ -1,0 +1,2 @@
+cd /usr/local/pentaho-bi-suite/pentaho/design-tools/data-integration	
+./kitchen.sh -file=/usr/local/data/bi_data/ETL/Production/DataVerificationScripts/DataVerificationStatusIncludingReport.kjb -level=Detailed > /usr/local/data/bi_data/logs/DataVerificationTestLog.log

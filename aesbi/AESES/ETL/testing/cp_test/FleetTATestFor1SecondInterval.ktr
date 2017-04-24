@@ -1,0 +1,2777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>FleetTATestFor1SecondInterval</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <directory>&#x2f;</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2013&#x2f;09&#x2f;11 10&#x3a;11&#x3a;16.186</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2013&#x2f;09&#x2f;11 10&#x3a;11&#x3a;16.186</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>aeses</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>JNDI</access>
+    <database>aeses</database>
+    <port>50000</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50000</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50000</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50000</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>scada</name>
+    <server/>
+    <type>MYSQL</type>
+    <access>JNDI</access>
+    <database>scada</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>23</from><to>se</to><enabled>Y</enabled> </hop>
+  <hop> <from>59m</from><to>minutes</to><enabled>Y</enabled> </hop>
+  <hop> <from>59s</from><to>sec</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator</from><to>sv</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>fromdate</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>23</to><enabled>Y</enabled> </hop>
+  <hop> <from>fromdate</from><to>Table input</to><enabled>Y</enabled> </hop>
+  <hop> <from>minutes</from><to>59s</to><enabled>Y</enabled> </hop>
+  <hop> <from>se</from><to>sv1</to><enabled>Y</enabled> </hop>
+  <hop> <from>sec</from><to>time</to><enabled>Y</enabled> </hop>
+  <hop> <from>sv</from><to>59m</to><enabled>Y</enabled> </hop>
+  <hop> <from>sv1</from><to>Calculator</to><enabled>Y</enabled> </hop>
+  <hop> <from>svdate</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>time</from><to>svdate</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>SG1_MT1_INST_P</to><enabled>Y</enabled> </hop>
+  <hop> <from>SG1_MT1_INST_P</from><to>Select values 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>max fact date dev</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Group Real Power Capacity</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group Real Power Capacity</from><to>Select values 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 3</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>GroupRealPowerDemand</to><enabled>Y</enabled> </hop>
+  <hop> <from>GroupRealPowerDemand</from><to>Select values 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 5</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 2</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>RealSignalFromSDU</to><enabled>Y</enabled> </hop>
+  <hop> <from>RealSignalFromSDU</from><to>Select values 6</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 3</from><to>Merge Join 3 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 6</from><to>Merge Join 3 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join 3 2</from><to>Select values 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 7</from><to>Get previous row fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get previous row fields</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 4</from><to>Select values 7</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 2</from><to>Select values 8</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Select values 9</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 9</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 8</from><to>Group by</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by</from><to>Select values 10</to><enabled>Y</enabled> </hop>
+  <hop> <from>KPI Measures Calculation</from><to>Selecting Required Fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 10</from><to>KPI Measures Calculation</to><enabled>Y</enabled> </hop>
+  <hop> <from>3</from><to>seq</to><enabled>Y</enabled> </hop>
+  <hop> <from>C1</from><to>JS</to><enabled>Y</enabled> </hop>
+  <hop> <from>JS</from><to>c2</to><enabled>Y</enabled> </hop>
+  <hop> <from>c2</from><to>KPIs</to><enabled>Y</enabled> </hop>
+  <hop> <from>seq</from><to>C1</to><enabled>Y</enabled> </hop>
+  <hop> <from>Selecting Required Fields</from><to>3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants</from><to>req_fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter null values</from><to>Dummy</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter null values</from><to>lookup values</to><enabled>Y</enabled> </hop>
+  <hop> <from>req_fields</from><to>Filter null values</to><enabled>Y</enabled> </hop>
+  <hop> <from>KPIs</from><to>Add constants</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup values</from><to>Database lookup</to><enabled>Y</enabled> </hop>
+  <hop> <from>dst_bi_dim_date_id is not null</from><to>Dummy </to><enabled>Y</enabled> </hop>
+  <hop> <from>Database lookup</from><to>dst_bi_dim_date_id is not null</to><enabled>Y</enabled> </hop>
+  <hop> <from>dst_bi_dim_date_id is not null</from><to>Microsoft Excel Output</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>23</name>
+    <type>CloneRow</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <nrclones>23</nrclones>
+    <addcloneflag>N</addcloneflag>
+    <cloneflagfield/>
+    <nrcloneinfield>N</nrcloneinfield>
+    <nrclonefield/>
+    <addclonenum>N</addclonenum>
+    <clonenumfield/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>199</xloc>
+      <yloc>60</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>3</name>
+    <type>CloneRow</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <nrclones>3</nrclones>
+    <addcloneflag>N</addcloneflag>
+    <cloneflagfield/>
+    <nrcloneinfield>N</nrcloneinfield>
+    <nrclonefield/>
+    <addclonenum>N</addclonenum>
+    <clonenumfield/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>760</xloc>
+      <yloc>570</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>59m</name>
+    <type>CloneRow</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <nrclones>59</nrclones>
+    <addcloneflag>N</addcloneflag>
+    <cloneflagfield/>
+    <nrcloneinfield>N</nrcloneinfield>
+    <nrclonefield/>
+    <addclonenum>N</addclonenum>
+    <clonenumfield/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>548</xloc>
+      <yloc>53</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>59s</name>
+    <type>CloneRow</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <nrclones>59</nrclones>
+    <addcloneflag>N</addcloneflag>
+    <cloneflagfield/>
+    <nrcloneinfield>N</nrcloneinfield>
+    <nrclonefield/>
+    <addclonenum>N</addclonenum>
+    <clonenumfield/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>684</xloc>
+      <yloc>52</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>C1</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>m</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>15</field_a>
+<field_b/>
+<field_c/>
+<value_type>Integer</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>minutes</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>min</field_a>
+<field_b>m</field_b>
+<field_c/>
+<value_type>Integer</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>600</xloc>
+      <yloc>567</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>date</field_name>
+<calc_type>ADD_HOURS</calc_type>
+<field_a>fromdate</field_a>
+<field_b>seq</field_b>
+<field_c/>
+<value_type>Date</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>412</xloc>
+      <yloc>54</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>SG1_MT1_INST_PBygroup_real_power_capacity</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>ABSOfSG1_MT1_INST_P</field_a>
+<field_b>GroupRealPowerCapacity</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>Diff</field_name>
+<calc_type>SUBTRACT</calc_type>
+<field_a>ABSOfSG1_MT1_INST_P</field_a>
+<field_b>PreviousRowOfABSOfSG1_MT1_INST_P</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>DiffOfSG1_MT1_INST_P</field_name>
+<calc_type>ABS</calc_type>
+<field_a>Diff</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>967</xloc>
+      <yloc>466</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get previous row fields</name>
+    <type>GetPreviousRowField</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>ABSOfSG1_MT1_INST_P</in_stream_name>
+        <out_stream_name>PreviousRowOfABSOfSG1_MT1_INST_P</out_stream_name>
+      </field>
+      <field>
+        <in_stream_name>group_real_power_capacity</in_stream_name>
+        <out_stream_name>PreviousRowOfgroup_real_power_capacity</out_stream_name>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>729</xloc>
+      <yloc>358</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group Real Power Capacity</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>scada</connection>
+    <sql>SELECT &#xa; pointValue AS group_real_power_capacity,&#xd;&#xa;DATE_FORMAT&#x28;FROM_UNIXTIME&#x28;ts&#x2f;1000&#x29;,&#x22;&#x25;Y-&#x25;m-&#x25;d &#x25;H&#x3a;&#x25;i&#x3a;&#x25;S&#x22;&#x29; as datetime&#xa;    FROM mango.pointValues&#xa;    WHERE dataPointId &#x3d; 6928 AND&#xa;       ts  BETWEEN UNIX_TIMESTAMP&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;&#x29;&#x2a; 1000 &#xa;         AND UNIX_TIMESTAMP&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;&#x29;&#x2a; 1000&#x3b;&#xd;&#xa;&#xa;&#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup>Select values</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>152</xloc>
+      <yloc>270</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>Generated_Hour</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>SumOfSG1_MT1_INST_P</aggregate>
+          <subject>SG1_MT1_INST_P</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>SumOfABSOfSG1_MT1_INST_P</aggregate>
+          <subject>ABSOfSG1_MT1_INST_P</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>SumOfSG1_MT1_INST_PBygroup_real_power_capacity</aggregate>
+          <subject>SG1_MT1_INST_PBygroup_real_power_capacity</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>SumOfDiffOfSG1_MT1_INST_P</aggregate>
+          <subject>DiffOfSG1_MT1_INST_P</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>SumOfGroupRealPowerCapacity</aggregate>
+          <subject>GroupRealPowerCapacity</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>CountOfHour</aggregate>
+          <subject>Generated_Hour</subject>
+          <type>COUNT_ALL</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>DistincHours</aggregate>
+          <subject>Generated_Hour</subject>
+          <type>COUNT_DISTINCT</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>datetime</aggregate>
+          <subject>datetime_1</subject>
+          <type>MAX</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1156</xloc>
+      <yloc>452</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>GroupRealPowerDemand</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>scada</connection>
+    <sql>SELECT pointValue AS GroupRealPowerDemand, &#xa;   DATE_FORMAT&#x28;FROM_UNIXTIME&#x28;ts&#x2f;1000&#x29;,&#x22;&#x25;Y-&#x25;m-&#x25;d &#x25;H&#x3a;&#x25;i&#x3a;&#x25;S&#x22;&#x29; as datetime&#xa;FROM mango.pointValues&#xa;WHERE dataPointId &#x3d; 6295 AND&#xa;       ts  BETWEEN UNIX_TIMESTAMP&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;&#x29;&#x2a; 1000 &#xa;         AND UNIX_TIMESTAMP&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;&#x29;&#x2a; 1000&#x3b;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup>Select values</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>156</xloc>
+      <yloc>376</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>JS</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>Y</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#xa;var time&#x3d;&#x27;&#x27;&#x3b;&#xa;&#xa;if&#x28;minutes &#x3d;&#x3d; 0&#x29; &#x7b; time &#x3d; &#x22;00&#x22;&#x2b;&#x22;&#x3a;&#x22;&#x2b;minutes&#x2b;&#x22;0&#x3a;00&#x22;&#x3b; &#x7d;&#xa;else &#x7b; time &#x3d; &#x22;00&#x22;&#x2b; &#x22;&#x3a;&#x22; &#x2b; minutes&#x2b;&#x22;&#x3a;00&#x22;&#x3b;&#x7d; </jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>time</name>
+        <rename>time</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>528</xloc>
+      <yloc>655</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>KPI Measures Calculation</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>TotalHoursInterval</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>8760</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>Capacity</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>12000</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>MaximumCapacity</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>20000</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>HourQuarters</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>4</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>SampleIntervalRate</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>1</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>Constant1000</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>1000</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>Cosntant12</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>12</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>PercentageCosntant</field_name>
+<calc_type>CONSTANT</calc_type>
+<field_a>100</field_a>
+<field_b/>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>SumOfABSPVByHourCount</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>SumOfABSOfSG1_MT1_INST_P</field_a>
+<field_b>CountOfHour</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>TotalHoursIntervalMulCapacity</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>TotalHoursInterval</field_a>
+<field_b>Capacity</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>EnergyThroughput</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>TotalHoursIntervalMulCapacity</field_a>
+<field_b>SumOfABSPVByHourCount</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>HourCountMulCapacity</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>CountOfHour</field_a>
+<field_b>Capacity</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>AvailabilityFactor</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>SumOfGroupRealPowerCapacity</field_a>
+<field_b>HourCountMulCapacity</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>AvailabilityFactorInPercentage</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>AvailabilityFactor</field_a>
+<field_b>PercentageCosntant</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>CapacityFactor</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>SumOfSG1_MT1_INST_PBygroup_real_power_capacity</field_a>
+<field_b>CountOfHour</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>CapacityFactorInPencentage</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>CapacityFactor</field_a>
+<field_b>PercentageCosntant</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>SampleIntervalRateMulConstant12</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>SampleIntervalRate</field_a>
+<field_b>Cosntant12</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>HourCountMulSampleIntervalRateMulConstant12</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>CountOfHour</field_a>
+<field_b>SampleIntervalRateMulConstant12</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>OuputIntensity</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>SumOfDiffOfSG1_MT1_INST_P</field_a>
+<field_b>HourCountMulSampleIntervalRateMulConstant12</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>CapacityByHourQuarters</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>Capacity</field_a>
+<field_b>HourQuarters</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>CRate</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>SumOfABSPVByHourCount</field_a>
+<field_b>CapacityByHourQuarters</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>SumOfGroupRealPowerCapacityByConstant1000</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>SumOfGroupRealPowerCapacity</field_a>
+<field_b>Constant1000</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>Propensity</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>SumOfSG1_MT1_INST_P</field_a>
+<field_b>SumOfGroupRealPowerCapacityByConstant1000</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>HourCountMulMaximumCapacity</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>CountOfHour</field_a>
+<field_b>MaximumCapacity</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>AvailableCapacity</field_name>
+<calc_type>DIVIDE</calc_type>
+<field_a>SumOfGroupRealPowerCapacity</field_a>
+<field_b>HourCountMulMaximumCapacity</field_b>
+<field_c/>
+<value_type>Number</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>AvailableCapacityInPercentage</field_name>
+<calc_type>MULTIPLY</calc_type>
+<field_a>AvailableCapacity</field_a>
+<field_b>PercentageCosntant</field_b>
+<field_c/>
+<value_type>-</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>948</xloc>
+      <yloc>554</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>KPIs</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>EnergyThroughput</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AvailabilityFactorInPercentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CapacityFactorInPencentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>OuputIntensity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CRate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Propensity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AvailableCapacityInPercentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>timestamp</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>timestamp</name>
+        <rename>timestamp</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>356</xloc>
+      <yloc>660</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>FULL OUTER</join_type>
+<step1>Sort rows</step1>
+<step2>Select values 2</step2>
+    <keys_1>
+      <key>datetime</key>
+    </keys_1>
+    <keys_2>
+      <key>datetime</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>448</xloc>
+      <yloc>175</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>FULL OUTER</join_type>
+<step1>Merge Join</step1>
+<step2>Select values 3</step2>
+    <keys_1>
+      <key>datetime</key>
+    </keys_1>
+    <keys_2>
+      <key>datetime</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>452</xloc>
+      <yloc>276</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 3</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>FULL OUTER</join_type>
+<step1>Select values 5</step1>
+<step2>Merge Join 2</step2>
+    <keys_1>
+      <key>datetime</key>
+    </keys_1>
+    <keys_2>
+      <key>datetime</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>454</xloc>
+      <yloc>380</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join 3 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>FULL OUTER</join_type>
+<step1>Merge Join 3</step1>
+<step2>Select values 6</step2>
+    <keys_1>
+      <key>datetime</key>
+    </keys_1>
+    <keys_2>
+      <key>datetime</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>459</xloc>
+      <yloc>474</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;var GroupRealPowerCapacity&#x3d;&#x22;&#x22;&#x3b;&#xd;&#xa;if&#x28;group_real_power_capacity&#x3d;&#x3d;null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;GroupRealPowerCapacity&#x3d;PreviousRowOfgroup_real_power_capacity&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else&#xd;&#xa;&#x7b;&#xd;&#xa;GroupRealPowerCapacity&#x3d;group_real_power_capacity&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>GroupRealPowerCapacity</name>
+        <rename>GroupRealPowerCapacity</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>846</xloc>
+      <yloc>469</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>RealSignalFromSDU</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>scada</connection>
+    <sql>SELECT pointValue AS RealSignalFromSDU, &#xa;   DATE_FORMAT&#x28;FROM_UNIXTIME&#x28;ts&#x2f;1000&#x29;,&#x22;&#x25;Y-&#x25;m-&#x25;d &#x25;H&#x3a;&#x25;i&#x3a;&#x25;S&#x22;&#x29; as datetime&#xa;FROM mango.pointValues&#xa;WHERE dataPointId &#x3d; 6294 AND&#xa;       ts  BETWEEN UNIX_TIMESTAMP&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;&#x29;&#x2a; 1000 &#xa;         AND UNIX_TIMESTAMP&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;&#x29;&#x2a; 1000&#x3b;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup>Select values</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>162</xloc>
+      <yloc>472</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>SG1_MT1_INST_P</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>scada</connection>
+    <sql>SELECT CONCAT&#x28;CONCAT&#x28;DATE_FORMAT&#x28;FROM_UNIXTIME&#x28;ts&#x2f;1000&#x29;,&#x22;&#x25;Y-&#x25;m-&#x25;d &#x25;H&#x3a;&#x22;&#x29;,if&#x28;FLOOR&#x28;MINUTE&#x28;FROM_UNIXTIME&#x28;ts&#x2f;1000&#x29;&#x29;&#x2f;15&#x29;&#x3d;0,&#x22;00&#x22;,FLOOR&#x28;MINUTE&#x28;FROM_UNIXTIME&#x28;ts&#x2f;1000&#x29;&#x29;&#x2f;15&#x29;&#x2a;15&#x29;&#x29;,&#x22;&#x3a;00&#x22;&#x29; AS DATE,&#xa;DATE_FORMAT&#x28;FROM_UNIXTIME&#x28;ts&#x2f;1000&#x29;,&#x22;&#x25;Y-&#x25;m-&#x25;d &#x25;H&#x3a;&#x25;i&#x3a;&#x25;S&#x22;&#x29; as datetime,&#xd;&#xa;ABS&#x28;pointValue&#x29; AS ABSOfSG1_MT1_INST_P,&#xa;pointValue AS SG1_MT1_INST_P&#xa;FROM mango.pointValues&#xa;WHERE dataPointId &#x3d; 6317 AND &#xa;	ts  BETWEEN UNIX_TIMESTAMP&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;&#x29;&#x2a; 1000 &#xa;	AND UNIX_TIMESTAMP&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;&#x29;&#x2a; 1000&#x3b;&#xa;&#xa;&#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup>Select values</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>156</xloc>
+      <yloc>174</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>fromdate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>todate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>fromdate</name>
+        <rename>fromdate</rename>
+        <type>Date</type>
+        <length>19</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>todate</name>
+        <rename>todate</rename>
+        <type>Date</type>
+        <length>19</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>20</xloc>
+      <yloc>170</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 10</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Generated_Hour</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SumOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SumOfABSOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SumOfSG1_MT1_INST_PBygroup_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SumOfDiffOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SumOfGroupRealPowerCapacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CountOfHour</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>datetime</name>
+        <rename>datetime</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1072</xloc>
+      <yloc>631</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ABSOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>DATE</name>
+        <rename>DATE</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>datetime</name>
+        <rename>datetime</rename>
+        <type>Date</type>
+        <length>26</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>278</xloc>
+      <yloc>174</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>group_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>datetime</name>
+        <rename>datetime</rename>
+        <type>Date</type>
+        <length>24</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>294</xloc>
+      <yloc>268</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>GroupRealPowerDemand</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Generated_Hour</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ABSOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>group_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>RealSignalFromSDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>551</xloc>
+      <yloc>378</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 5</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>GroupRealPowerDemand</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>datetime</name>
+        <rename>datetime</rename>
+        <type>Date</type>
+        <length>24</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>380</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 6</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>RealSignalFromSDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>datetime</name>
+        <rename>datetime</rename>
+        <type>Date</type>
+        <length>24</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>474</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 7</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>GroupRealPowerDemand</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Generated_Hour</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ABSOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>group_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>RealSignalFromSDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>636</xloc>
+      <yloc>462</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 8</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>GroupRealPowerDemand</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Generated_Hour</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ABSOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>group_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>RealSignalFromSDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>PreviousRowOfABSOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>PreviousRowOfgroup_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GroupRealPowerCapacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SG1_MT1_INST_PBygroup_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DiffOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>SG1_MT1_INST_PBygroup_real_power_capacity</name>
+        <rename>SG1_MT1_INST_PBygroup_real_power_capacity</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;&#x23;&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>DiffOfSG1_MT1_INST_P</name>
+        <rename>DiffOfSG1_MT1_INST_P</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1026</xloc>
+      <yloc>358</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 9</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>GroupRealPowerDemand</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Generated_Hour</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ABSOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>group_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>RealSignalFromSDU</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime_1</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>PreviousRowOfABSOfSG1_MT1_INST_P</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>PreviousRowOfgroup_real_power_capacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GroupRealPowerCapacity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>GroupRealPowerCapacity</name>
+        <rename>GroupRealPowerCapacity</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>907</xloc>
+      <yloc>355</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Selecting Required Fields</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>EnergyThroughput</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AvailabilityFactorInPercentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CapacityFactorInPencentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>OuputIntensity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CRate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Propensity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AvailableCapacityInPercentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>EnergyThroughput</name>
+        <rename>EnergyThroughput</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>AvailabilityFactorInPercentage</name>
+        <rename>AvailabilityFactorInPercentage</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>CapacityFactorInPencentage</name>
+        <rename>CapacityFactorInPencentage</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>OuputIntensity</name>
+        <rename>OuputIntensity</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>CRate</name>
+        <rename>CRate</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Propensity</name>
+        <rename>Propensity</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>AvailableCapacityInPercentage</name>
+        <rename>AvailableCapacityInPercentage</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>datetime</name>
+        <rename>datetime</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>873</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>datetime</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>678</xloc>
+      <yloc>171</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql> SELECT &#xa; DATE_FORMAT&#x28;CONVERT_TZ&#x28;&#x3f;,&#x27;US&#x2f;Eastern&#x27;,&#x27;GMT&#x27;&#x29;,&#x22;&#x25;Y-&#x25;m-&#x25;d &#x25;H&#x3a;00&#x3a;00&#x22;&#x29; AS fromdate&#xa;</sql>
+    <limit>0</limit>
+    <lookup>fromdate</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>118</xloc>
+      <yloc>57</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>c2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>timestamp</field_name>
+<calc_type>ADD_TIME_TO_DATE</calc_type>
+<field_a>datetime</field_a>
+<field_b>time</field_b>
+<field_c/>
+<value_type>Date</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>406</xloc>
+      <yloc>574</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>fromdate</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>fromdate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>fromdate</name>
+        <rename>fromdate</rename>
+        <type>Date</type>
+        <length>19</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>16</xloc>
+      <yloc>56</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>max fact date dev</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>-- SELECT &#xa;-- date_format&#x28;TIMESTAMP,&#x22;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x22;&#x29; AS fromdate,date_format&#x28;TIMESTAMP,&#x22;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;59&#x3a;59&#x22;&#x29;  AS todate&#xa;-- FROM bi_dim_date WHERE id &#x3d; &#x28;SELECT max&#x28;bi_dim_date_id&#x29; FROM bi_fact_fleet_kpis WHERE bi_dim_fleet_id &#x3d; 700 AND disposition  IS NOT NULL&#x29;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa; SELECT &#xd;&#xa; DATE_FORMAT&#x28;TIMESTAMP,&#x22;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x22;&#x29; AS fromdate,DATE_FORMAT&#x28;TIMESTAMP,&#x22;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;59&#x3a;59&#x22;&#x29;  AS todate&#xd;&#xa; FROM bi_dim_date WHERE id &#x3d; 1531313&#x3b;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>19</xloc>
+      <yloc>278</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>minutes</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>minutes</valuename>
+      <use_database>N</use_database>
+      <connection/>
+      <schema/>
+      <seqname>SEQ_</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name/>
+      <start_at>0</start_at>
+      <increment_by>1</increment_by>
+      <max_value>59</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>615</xloc>
+      <yloc>53</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>se</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>seq</valuename>
+      <use_database>N</use_database>
+      <connection/>
+      <schema/>
+      <seqname>SEQ_</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name/>
+      <start_at>0</start_at>
+      <increment_by>1</increment_by>
+      <max_value>999999999</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>272</xloc>
+      <yloc>58</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sec</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>sec</valuename>
+      <use_database>N</use_database>
+      <connection/>
+      <schema/>
+      <seqname>SEQ_</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name/>
+      <start_at>0</start_at>
+      <increment_by>1</increment_by>
+      <max_value>59</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>745</xloc>
+      <yloc>51</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>seq</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>min</valuename>
+      <use_database>N</use_database>
+      <connection/>
+      <schema/>
+      <seqname>SEQ_</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name/>
+      <start_at>0</start_at>
+      <increment_by>1</increment_by>
+      <max_value>3</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>692</xloc>
+      <yloc>646</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sv</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>date</name>
+        <rename>date</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>481</xloc>
+      <yloc>53</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sv1</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>fromdate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>seq</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>fromdate</name>
+        <rename>fromdate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>343</xloc>
+      <yloc>56</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>svdate</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>datet</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>seq</name>
+        <rename>Generated_Hour</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>datet</name>
+        <rename>datetime</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>814</xloc>
+      <yloc>171</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>time</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var min&#x3d;&#x22;&#x22;&#x3b;&#xa;&#xa;if&#x28;minutes&#x3c;10&#x29;&#xa;&#x7b;&#xa;min&#x3d;&#x22;0&#x22;&#x2b;minutes&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;min&#x3d;minutes&#x3b;&#xa;&#x7d;&#xa;&#xa;if&#x28;sec&#x3c;10&#x29;&#xa;&#x7b;&#xa;s&#x3d;&#x22;0&#x22;&#x2b;sec&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;s&#x3d;sec&#x3b;&#xa;&#x7d;&#xa;var time&#x3d; date&#x2b;&#x22;&#x3a;&#x22;&#x2b;min&#x2b;&#x22;&#x3a;&#x22;&#x2b;s&#x3b;&#xa;&#xa;var datet&#x3d; str2date&#x28;time, &#x22;E MMM dd HH&#x3a;mm&#x3a;ss z yyyy&#x3a;mm&#x3a;ss&#x22;, &#x22;EN&#x22;&#x29;&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>time</name>
+        <rename>time</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>datet</name>
+        <rename>datet</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>814</xloc>
+      <yloc>51</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>jira_id</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>0</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>262</xloc>
+      <yloc>585</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>210</xloc>
+      <yloc>846</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter null values</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Dummy</send_true_to>
+<send_false_to>lookup values</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>EnergyThroughput</leftvalue>
+ <function>IS NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>308</xloc>
+      <yloc>787</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup values</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var bi_dim_market_id &#x3d; 1&#x3b;&#xa;var bi_dim_fleet_id &#x3d; 700&#x3b;&#xa;var bi_dim_es_service_id &#x3d; 1&#x3b;&#xa;var bi_dim_supplier_id &#x3d; 1&#x3b;&#xa;var  bi_dim_technology_id &#x3d; 1&#x3b;&#xa;var min &#x3d; datetime.getMinutes&#x28;&#x29; &#x3b;&#xa;datetime.setSeconds&#x28;0&#x29;&#x3b;&#xa;&#xa;&#xa; if&#x28;min &#x3e;&#x3d; 0 &#x26;&#x26; min &#x3c; 15&#x29;&#xa;&#x7b;&#xa;datetime.setMinutes&#x28;0&#x29;&#x3b;&#xa;&#x7d;&#xa;else if&#x28;min &#x3e;&#x3d; 15 &#x26;&#x26; min &#x3c; 30&#x29;&#xa;&#x7b;&#xa;datetime.setMinutes&#x28;15&#x29;&#x3b;&#xa;&#x7d;&#xa;else if&#x28;min &#x3e;&#x3d; 30 &#x26;&#x26; min &#x3c; 45&#x29;&#xa;&#x7b;&#xa;datetime.setMinutes&#x28;30&#x29;&#x3b;&#xa;&#x7d;&#xa;else if&#x28;min &#x3e;&#x3d; 45 &#x26;&#x26; min &#x3c;&#x3d; 60&#x29;&#xa;datetime.setMinutes&#x28;45&#x29;&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>bi_dim_market_id</name>
+        <rename>bi_dim_market_id</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>bi_dim_fleet_id</name>
+        <rename>bi_dim_fleet_id</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>bi_dim_es_service_id</name>
+        <rename>bi_dim_es_service_id</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>bi_dim_supplier_id</name>
+        <rename>bi_dim_supplier_id</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>bi_dim_technology_id</name>
+        <rename>bi_dim_technology_id</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>430</xloc>
+      <yloc>728</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>req_fields</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>EnergyThroughput</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AvailabilityFactorInPercentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CapacityFactorInPencentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>OuputIntensity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CRate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Propensity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AvailableCapacityInPercentage</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>datetime</name>
+        <rename>timestamp</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>timestamp</name>
+        <rename>datetime</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>jira_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>207</xloc>
+      <yloc>678</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Database lookup</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>bi_dim_date</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>datetime</name>
+        <field>timestamp_gmt</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id</name>
+        <rename>bi_dim_date_id</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>532</xloc>
+      <yloc>811</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy </name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>671</xloc>
+      <yloc>861</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dst_bi_dim_date_id is not null</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Microsoft Excel Output</send_true_to>
+<send_false_to>Dummy </send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>bi_dim_date_id</leftvalue>
+ <function>IS NOT NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>659</xloc>
+      <yloc>731</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Microsoft Excel Output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding/>
+    <append>N</append>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>TaitScadaDataFor2013-09-03</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <create_parent_folder>N</create_parent_folder>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Sheet1</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>EnergyThroughput</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>AvailabilityFactorInPercentage</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>CapacityFactorInPencentage</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>OuputIntensity</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>CRate</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>Propensity</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>AvailableCapacityInPercentage</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>timestamp</name>
+        <type>Date</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>N</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>866</xloc>
+      <yloc>802</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>

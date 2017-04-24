@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<report name="instance-detail" orientation="landscape" pageformat="LETTER" leftmargin="10" rightmargin="10" topmargin="10" bottommargin="10">
+  <parser-config/>
+  <reportheader/>
+  <groups>
+    <group name="dummy">
+      <groupheader repeat="true" color="#000000" fontname="SansSerif" fontsize="11" fontstyle="bold" height="20">
+        <band name="DummyGroupNoDataBandElement">
+          <label height="12" vertical-alignment="middle" alignment="left" width="100%" x="0%" y="0">No Data Available</label>
+        </band>
+        <band name="DummyGroupDataBandElement">
+          <rectangle color="#808080" draw="false" fill="true" height="18" width="100%" x="0%" y="0"/>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="5%" x="0%" y="0">Date/Time</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="5%" x="5%" y="0">Status</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="5%" x="10%" y="0">User Id</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="10%" x="15%" y="0">Service</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="15%" x="25%" y="0">Session Id</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="15%" x="40%" y="0">Content Id</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="10%" x="55%" y="0">Engine</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="15%" x="65%" y="0">Instance Id</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="left" width="15%" x="80%" y="0">Message</label>
+          <label color="#D0D0D0" fontname="SansSerif" fontsize="12" fontstyle="bold" height="18" vertical-alignment="middle" alignment="right" width="5%" x="95%" y="0">Duration (s)</label>
+        </band>
+      </groupheader>
+      <groupfooter name="dummyGroupFooter" color="#000000" fontname="SansSerif" fontsize="11" fontstyle="bold"/>
+    </group>
+  </groups>
+  <items color="#000000" fontname="Arial" fontsize="10" fontstyle="plain">
+    <rectangle name="rowBandingElement" color="#E0E0E0" draw="false" fill="true" height="12" x="0%" width="100%" y="0"/>
+    <date-field name="instances_startElement" fieldname="instances_start" vertical-alignment="middle" alignment="left" width="5%" x="0%" y="0" height="12"/>
+    <string-field name="instances_statusElement" fieldname="instances_status" vertical-alignment="middle" alignment="left" width="5%" x="5%" y="0" height="12"/>
+    <string-field name="instances_userElement" fieldname="instances_user" vertical-alignment="middle" alignment="left" width="5%" x="10%" y="0" height="12"/>
+    <string-field name="instances_service_idElement" fieldname="instances_service_id" vertical-alignment="middle" alignment="left" width="10%" x="15%" y="0" height="12"/>
+    <string-field name="instances_session_idElement" fieldname="instances_session_id" vertical-alignment="middle" alignment="left" width="15%" x="25%" y="0" height="12"/>
+    <string-field name="instances_content_idElement" fieldname="instances_content_id" vertical-alignment="middle" alignment="left" width="15%" x="40%" y="0" height="12"/>
+    <string-field name="instances_engine_idElement" fieldname="instances_engine_id" vertical-alignment="middle" alignment="left" width="10%" x="55%" y="0" height="12"/>
+    <string-field name="instances_instance_idElement" fieldname="instances_instance_id" vertical-alignment="middle" alignment="left" width="15%" x="65%" y="0" height="12"/>
+    <string-field name="instances_messageElement" fieldname="instances_message" vertical-alignment="middle" alignment="left" width="15%" x="80%" y="0" height="12"/>
+    <number-field name="instances_durationElement" fieldname="instances_duration" vertical-alignment="middle" alignment="right" width="5%" x="95%" y="0" height="12"/>
+  </items>
+  <functions>
+    <function name="backgroundTrigger" class="org.pentaho.jfreereport.functions.ElementVisibilitySwitchFunction">
+      <properties>
+        <property name="element">rowBandingElement</property>
+        <property name="numberOfElements">1</property>
+        <property name="initialState">true</property>
+      </properties>
+    </function>
+    <expression class="org.jfree.report.function.HideElementIfDataAvailableExpression" name="DummyGroupNoDataBandElementHideIfNullTrigger">
+      <properties>
+        <property name="element">DummyGroupNoDataBandElement</property>
+      </properties>
+    </expression>
+    <expression class="org.jfree.report.function.ShowElementIfDataAvailableExpression" name="DummyGroupDataBandElementHideIfNullTrigger">
+      <properties>
+        <property name="element">DummyGroupDataBandElement</property>
+      </properties>
+    </expression>
+    <expression class="org.jfree.report.function.ShowElementIfDataAvailableExpression" name="dummyGroupFooterHideIfNullTrigger">
+      <properties>
+        <property name="element">dummyGroupFooter</property>
+      </properties>
+    </expression>
+  </functions>
+</report>

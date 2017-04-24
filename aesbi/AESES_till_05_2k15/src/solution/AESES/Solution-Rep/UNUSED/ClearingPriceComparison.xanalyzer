@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportRecord xmlns="http://www.pentaho.com">
+    <commonStorageAttributes update="2013-08-12T06:38:28" created="2013-08-08T02:21:46" updatedBy="harshavardhan.k@sigmainfo.net" createdBy="harshavardhan.k@sigmainfo.net">
+        <path folder="AESES/UNUSED/ClearingPriceComparison.xanalyzer" name="ClearingPriceComparison"/>
+    </commonStorageAttributes>
+    <report freezeRows="true" freezeColumns="true" autoRefresh="true" version="7" showDrillLinks="true" emptyCellDisplay="-" showEmptyCells="false" useNonVisualTotals="false" showColumnGrandTotal="false" showRowGrandTotal="false" reportTypeEnum="JSON" cube="Market Prices (Prices and Volume) in Mondrian schema" catalog="Market Prices (Prices and Volume) in Mondrian schema">
+        <measures>
+            <measure gembarOrdinal="0" gembarId="measures" id="[MEASURE:0]" sortOrderEnum="NONE" measureTypeEnum="VALUE" showMin="false" showMax="false" showCount="false" showAverage="false" showAggregate="true" showSum="false" formula="[Measures].[Clearing Price]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Clearing Price" locale=""/>
+                </displayLabels>
+                <numberFormat formatShortcut="NONE" formatScale="2" formatCategory="General Number">
+                    <formatExpression></formatExpression>
+                </numberFormat>
+            </measure>
+        </measures>
+        <columnAttributes/>
+        <rowAttributes>
+            <attribute gembarOrdinal="0" gembarId="columns" sortOrderEnum="ASC" showSubtotal="false" formula="[Iso].[Iso]"/>
+            <attribute gembarOrdinal="1" gembarId="columns" sortOrderEnum="ASC" showSubtotal="false" formula="[Market].[Market]"/>
+            <attribute gembarOrdinal="2" gembarId="columns" sortOrderEnum="ASC" showSubtotal="false" formula="[Market Service.Service].[Service]"/>
+            <attribute gembarOrdinal="3" gembarId="columns" sortOrderEnum="ASC" showSubtotal="false" formula="[Market Zone.Zone].[Zone]"/>
+            <attribute gembarOrdinal="0" gembarId="rows" sortOrderEnum="ASC" showSubtotal="false" formula="[Month].[Month]"/>
+        </rowAttributes>
+        <filters>
+            <filter viewFilterEnum="MULTIPLE" formula="[Market].[Market]">
+                <predicates>
+                    <predicate parameterName="market" operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="Day-Ahead Regulation" formula="[Market].[Day-Ahead Regulation]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+            <filter viewFilterEnum="MULTIPLE" formula="[Market Service.Service].[Service]">
+                <predicates>
+                    <predicate parameterName="service" operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="Regulation" formula="[Market Service.Service].[Regulation]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+            <filter viewFilterEnum="MULTIPLE" formula="[Market Zone.Zone].[Zone]">
+                <predicates>
+                    <predicate parameterName="zone" operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="All" formula="[Market Zone.Zone].[All]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+            <filter viewFilterEnum="MULTIPLE" formula="[Year].[Year]">
+                <predicates>
+                    <predicate parameterName="year" operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="2013" formula="[Year].[2013]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+            <filter viewFilterEnum="MULTIPLE" formula="[Iso].[Iso]">
+                <predicates>
+                    <predicate parameterName="iso" operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="CAISO" formula="[Iso].[CAISO]"/>
+                        <member pos="0" caption="ERCOT" formula="[Iso].[ERCOT]"/>
+                        <member pos="0" caption="ISO-NE" formula="[Iso].[ISO-NE]"/>
+                        <member pos="0" caption="Irish" formula="[Iso].[Irish]"/>
+                        <member pos="0" caption="MISO" formula="[Iso].[MISO]"/>
+                        <member pos="0" caption="NYISO" formula="[Iso].[NYISO]"/>
+                        <member pos="0" caption="NYMEX" formula="[Iso].[NYMEX]"/>
+                        <member pos="0" caption="PJM" formula="[Iso].[PJM]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+        </filters>
+        <chartOptions legendFontFamily="Default" labelFontFamily="Default" legendStyle="PLAIN" legendColor="#000000" legendSize="12" legendBackgroundColor="#ffffff" labelStyle="PLAIN" backgroundColorEnd="#ffffff" maxChartsPerRow="3" backgroundFill="NONE" labelSize="12" labelColor="#000000" backgroundColor="#ffffff" maxValues="100" lineShape="CIRCLE" lineWidth="2" displayUnitsSecondary="UNITS_0" autoRangeSecondary="true" displayUnits="UNITS_0" autoRange="true" showLegend="true" legendPosition="BOTTOM" customChartType="ccc_line" chartType="CUSTOM"/>
+        <selectionFilters/>
+        <selectionItems/>
+        <pageSetup excelScalingPageTall="1" excelScalingPageWide="1" excelScalingPercent="100" excelScalingType="PERCENT" pdfOrientation="LANDSCAPE" excelOrientation="LANDSCAPE" pdfPageSize="LETTER" excelPageSize="LETTER"/>
+    </report>
+    <uiAttributes showFilterPanel="false" showFieldLayout="false" showFieldList="false">
+        <rowFieldWidths/>
+        <columnDataFieldWidths/>
+        <pluginData>[{"args":{"legendPadding":{"left":1,"right":1,"top":2,"bottom":2},"extensionPoints":{"xAxisLabel_textAngle":-0.7853981633974483,"xAxisLabel_textAlign":"right","xAxisLabel_textBaseline":"top","xAxisRule_strokeStyle":"#808285","yAxisRule_strokeStyle":"#808285","secondYAxisRule_strokeStyle":"#808285","xAxisTicks_strokeStyle":"#D1D3D4","yAxisTicks_strokeStyle":"#D1D3D4","secondYAxisTicks_strokeStyle":"#D1D3D4","legendArea_lineWidth":1,"legendArea_strokeStyle":"#c0c0c0","legendLabel_textDecoration":null},"tipsySettings":{"offset":15,"delayIn":200,"delayOut":80,"html":true,"gravity":"nw","fade":false,"followMouse":true,"corners":true,"arrow":false,"opacity":1},"rolesToCccDimensionsMap":{"columns":"series","rows":"category","multi":"multiChart","measures":"value"},"cccClass":"pvc.LineChart","shape":"circle","nullInterpolationMode":"linear","orthoAxisOffset":0,"baseAxisOffset":0,"crosstabMode":true,"measuresInColumns":false,"orientation":"vertical","groupedLabelSep":"~","legend":true,"multiRole":"multi","legendPosition":"right","legendSizeMax":"60%","legendPaddings":10,"orthoAxisFullGrid":true,"axisEndLine":true,"axisSizeMax":"50%","axisLabelSpacingMin":0.6,"axisDomainRoundMode":"tick","axisTitleSizeMax":"20%","showPlotFrame":false,"axisOverlappedLabelsHide":true,"axisOverlappedLabelsMaxPct":0.05},"visualizationId":"ccc_line"}]</pluginData>
+    </uiAttributes>
+</reportRecord>

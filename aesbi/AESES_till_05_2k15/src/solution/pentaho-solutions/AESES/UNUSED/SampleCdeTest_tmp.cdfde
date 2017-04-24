@@ -1,0 +1,306 @@
+{
+  "layout": {
+    "title": "CDF - Sample structure",
+    "rows": [
+      {
+        "id": "1170e186-0c81-eca0-f2e3-25c483ebc56b",
+        "type": "LayoutRow",
+        "typeDesc": "Row",
+        "parent": "UnIqEiD",
+        "properties": [
+          {
+            "order": 5,
+            "description": "Name",
+            "name": "name",
+            "value": "",
+            "type": "Id",
+            "tooltip": "Name"
+          },
+          {
+            "order": 50,
+            "description": "Height",
+            "name": "height",
+            "value": "",
+            "type": "Integer",
+            "tooltip": "Element height, in pixels "
+          },
+          {
+            "order": 56,
+            "description": "BackgroundColor",
+            "name": "backgroundColor",
+            "value": "",
+            "classType": "advanced",
+            "type": "Color",
+            "tooltip": "Element background color"
+          },
+          {
+            "order": 70,
+            "description": "Corners",
+            "name": "roundCorners",
+            "value": "",
+            "type": "RoundCorners",
+            "tooltip": "Corners type"
+          },
+          {
+            "order": 75,
+            "description": "Text Align",
+            "name": "textAlign",
+            "value": "",
+            "type": "TextAlign",
+            "tooltip": "Text Align"
+          },
+          {
+            "order": 80,
+            "description": "Css Class",
+            "name": "cssClass",
+            "value": "",
+            "type": "String",
+            "tooltip": "Css Class to be used when this element is rendered"
+          }
+        ]
+      },
+      {
+        "id": "3d4313cc-efd9-d8d7-41ae-03e150f7a84b",
+        "type": "LayoutRow",
+        "typeDesc": "Row",
+        "parent": "UnIqEiD",
+        "properties": [
+          {
+            "order": 5,
+            "description": "Name",
+            "name": "name",
+            "value": "pdf",
+            "type": "Id",
+            "tooltip": "Name"
+          },
+          {
+            "order": 50,
+            "description": "Height",
+            "name": "height",
+            "value": "",
+            "type": "Integer",
+            "tooltip": "Element height, in pixels "
+          },
+          {
+            "order": 56,
+            "description": "BackgroundColor",
+            "name": "backgroundColor",
+            "value": "",
+            "classType": "advanced",
+            "type": "Color",
+            "tooltip": "Element background color"
+          },
+          {
+            "order": 70,
+            "description": "Corners",
+            "name": "roundCorners",
+            "value": "",
+            "type": "RoundCorners",
+            "tooltip": "Corners type"
+          },
+          {
+            "order": 75,
+            "description": "Text Align",
+            "name": "textAlign",
+            "value": "",
+            "type": "TextAlign",
+            "tooltip": "Text Align"
+          },
+          {
+            "order": 80,
+            "description": "Css Class",
+            "name": "cssClass",
+            "value": "",
+            "type": "String",
+            "tooltip": "Css Class to be used when this element is rendered"
+          }
+        ]
+      }
+    ]
+  },
+  "components": {
+    "rows": [
+      {
+        "id": "OTHERCOMPONENTS",
+        "name": "Others",
+        "type": "Label",
+        "typeDesc": "<i>Group</i>",
+        "parent": "UnIqEiD",
+        "properties": [
+          {
+            "name": "Group",
+            "description": "Group",
+            "value": "Others",
+            "type": "Label"
+          }
+        ]
+      },
+      {
+        "id": "410a149a-9cac-aef0-e403-bcc4b9dc014e",
+        "type": "Componentsprpt",
+        "typeDesc": "PRPT Component",
+        "parent": "OTHERCOMPONENTS",
+        "properties": [
+          {
+            "order": 5,
+            "description": "Name",
+            "name": "name",
+            "value": "prpt",
+            "type": "Id",
+            "tooltip": "Name"
+          },
+          {
+            "order": 13,
+            "description": "Listeners",
+            "name": "listeners",
+            "value": "[]",
+            "type": "Listeners",
+            "tooltip": "Parameters to listen to"
+          },
+          {
+            "order": 26,
+            "description": "Solution",
+            "name": "solution",
+            "value": "AESES",
+            "type": "String",
+            "tooltip": "Solution where the xaction is"
+          },
+          {
+            "order": 27,
+            "description": "Path",
+            "name": "path",
+            "value": "Market",
+            "type": "String",
+            "tooltip": "Path where the xaction is"
+          },
+          {
+            "order": 40,
+            "description": "Action",
+            "name": "action",
+            "value": "arbitrage.prpt",
+            "type": "String",
+            "tooltip": "Action file name"
+          },
+          {
+            "order": 40,
+            "description": "IFrame",
+            "name": "iframe",
+            "value": "true",
+            "classType": "advanced",
+            "type": "Boolean",
+            "tooltip": "Whether to use iframe or insert inside the div"
+          },
+          {
+            "order": 40,
+            "description": "Parameters",
+            "name": "xActionArrayParameter",
+            "value": "[[\"i\",\"PJM\"],[\"m\",\"Day-Ahead Regulation\"],[\"s\",\"Energy\"],[\"z\",\"ALL\"],[\"l\",\"4\"],[\"chart_type\",\"pdf\"]]",
+            "type": "ValuesArray",
+            "tooltip": " Parameters to pass to the component"
+          },
+          {
+            "order": 41,
+            "description": "Paginate",
+            "name": "paginate",
+            "value": "true",
+            "classType": "advanced",
+            "type": "Boolean",
+            "tooltip": "Paginate"
+          },
+          {
+            "order": 41,
+            "description": "Show parameters",
+            "name": "showParameters",
+            "value": "false",
+            "type": "Boolean",
+            "tooltip": "If true, parameters will be selectable on the rendered report"
+          },
+          {
+            "order": 50,
+            "description": "Priority",
+            "name": "priority",
+            "value": 5,
+            "classType": "advanced",
+            "type": "Integer",
+            "tooltip": "Priority for component execution component. Lower values have higher priority"
+          },
+          {
+            "order": 50,
+            "description": "Refresh Period",
+            "name": "refreshPeriod",
+            "value": "",
+            "classType": "advanced",
+            "type": "Integer",
+            "tooltip": "Time interval (in seconds) to refresh the component. If 0 or not set component won't refresh."
+          },
+          {
+            "order": 90,
+            "description": "HtmlObject",
+            "name": "htmlObject",
+            "value": "${p:pdf}",
+            "type": "HtmlObject",
+            "tooltip": "HtmlObject to prompt"
+          },
+          {
+            "order": 91,
+            "description": "Execute at start",
+            "name": "executeAtStart",
+            "value": "true",
+            "classType": "advanced",
+            "type": "Boolean",
+            "tooltip": "Execute at start?"
+          },
+          {
+            "order": 92,
+            "description": "Pre Execution",
+            "name": "preExecution",
+            "value": "",
+            "classType": "advanced",
+            "type": "JavaScript",
+            "tooltip": "Function to be executed before the component is updated"
+          },
+          {
+            "order": 93,
+            "description": "Post Execution",
+            "name": "postExecution",
+            "value": "",
+            "classType": "advanced",
+            "type": "JavaScript",
+            "tooltip": "Function to be executed after the component is updated"
+          },
+          {
+            "order": 94,
+            "description": "Pre Change",
+            "name": "preChange",
+            "value": "",
+            "classType": "advanced",
+            "type": "JavaScript",
+            "tooltip": "Function to be executed before the component is changed. It's a function of the type function(value){return value}, and can be used for validation"
+          },
+          {
+            "order": 95,
+            "description": "Post Change",
+            "name": "postChange",
+            "value": "",
+            "classType": "advanced",
+            "type": "JavaScript",
+            "tooltip": "Function to be executed after the component is changed. It's a function of the type function(value){...}"
+          },
+          {
+            "order": 99,
+            "description": "Tooltip",
+            "name": "tooltip",
+            "value": "",
+            "classType": "advanced",
+            "type": "Html",
+            "tooltip": "Tooltip to be displayed on component's mouse hover"
+          }
+        ]
+      }
+    ]
+  },
+  "datasources": {
+    "rows": []
+  },
+  "filename": "/AESES/UNUSED/SampleCdeTest_tmp.cdfde"
+}

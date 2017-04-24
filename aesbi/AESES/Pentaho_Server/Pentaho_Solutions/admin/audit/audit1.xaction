@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-sequence> 
+  <title>Blank</title>
+  <version>1</version>
+  <logging-level>ERROR</logging-level>
+  <documentation> 
+    <author/>  
+    <description>Empty blank action sequence document</description>  
+    <help/>  
+    <result-type>none</result-type>  
+    <icon/> 
+  </documentation>
+
+  <inputs> 
+    <query type="string"> 
+      <sources> 
+        <request>query</request> 
+      </sources> 
+    </query> 
+  </inputs>
+
+  <outputs> 
+    <query-result type="result-set"/> 
+  </outputs>
+
+  <resources/>
+  
+  <actions> 
+    <action-definition> 
+      <component-name>SQLLookupRule</component-name>
+      <action-type>SQL Query</action-type>
+      <action-inputs> 
+        <query type="string"/> 
+      </action-inputs>
+      <action-outputs> 
+        <query-result type="result-set"/> 
+      </action-outputs>
+      <component-definition> 
+        <jndi>Hibernate</jndi> 
+      </component-definition> 
+    </action-definition>
+ 
+  </actions> 
+</action-sequence>

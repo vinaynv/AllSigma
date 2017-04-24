@@ -1,0 +1,2442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>AllProjectsScadaTest</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2013&#x2f;10&#x2f;11 14&#x3a;53&#x3a;54.110</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2013&#x2f;10&#x2f;11 14&#x3a;53&#x3a;54.110</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>aeses</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>JNDI</access>
+    <database>aeses</database>
+    <port>50000</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50000</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50000</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50000</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>scada</name>
+    <server/>
+    <type>MYSQL</type>
+    <access>JNDI</access>
+    <database>scada</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>LM From &#x26; To Dates</from><to>LM To Change Date Format</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM From &#x26; To Dates</from><to>LM Fact Data</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM To Change Date Format</from><to>LM Dim Date</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM Fact Data</from><to>LM Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM Dim Date</from><to>LM Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM Merge Join</from><to>LM Missing Hours</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM Missing Hours</from><to>LM Join Rows &#x28;CP&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM To Change Date Format</from><to>LM Join Rows &#x28;CP&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>AN Fact Data</from><to>AN Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>LA Fact Data</from><to>LA Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>TA Fact Data</from><to>TA Merge Join</to><enabled>N</enabled> </hop>
+  <hop> <from>AN From &#x26; To Dates</from><to>AN To Change Date Format</to><enabled>Y</enabled> </hop>
+  <hop> <from>AN To Change Date Format</from><to>AN Dim Date</to><enabled>Y</enabled> </hop>
+  <hop> <from>AN From &#x26; To Dates</from><to>AN Fact Data</to><enabled>Y</enabled> </hop>
+  <hop> <from>AN Dim Date</from><to>AN Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>AN To Change Date Format</from><to>AN  Join Rows &#x28;CP&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>LA From &#x26; To Dates</from><to>LA To Change Date Format</to><enabled>Y</enabled> </hop>
+  <hop> <from>LA To Change Date Format</from><to>LA Dim Date</to><enabled>Y</enabled> </hop>
+  <hop> <from>TA From &#x26; To Dates</from><to>TA To Change Date Format</to><enabled>N</enabled> </hop>
+  <hop> <from>TA To Change Date Format</from><to>TA Dim Date</to><enabled>N</enabled> </hop>
+  <hop> <from>LA From &#x26; To Dates</from><to>LA Fact Data</to><enabled>Y</enabled> </hop>
+  <hop> <from>TA From &#x26; To Dates</from><to>TA Fact Data</to><enabled>N</enabled> </hop>
+  <hop> <from>LA Dim Date</from><to>LA Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>TA Dim Date</from><to>TA Merge Join</to><enabled>N</enabled> </hop>
+  <hop> <from>LA To Change Date Format</from><to>LA  Join Rows &#x28;CP&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>TA To Change Date Format</from><to>TA Join Rows &#x28;CP&#x29;</to><enabled>N</enabled> </hop>
+  <hop> <from>Group by</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM Group by</from><to>Test</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Status</to><enabled>Y</enabled> </hop>
+  <hop> <from>Test</from><to>Group by</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows </from><to>LM Group by</to><enabled>Y</enabled> </hop>
+  <hop> <from>LM Join Rows &#x28;CP&#x29;</from><to>Unique rows </to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by 2</from><to>Select values 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>AN Group by</from><to>Test 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 2</from><to>Status 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Test 2</from><to>Group by 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows  2</from><to>AN Group by</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by 3</from><to>Select values 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>LA Group by</from><to>Test 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 3</from><to>Status 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Test 3</from><to>Group by 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows  3</from><to>LA Group by</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by 4</from><to>Select values 4</to><enabled>N</enabled> </hop>
+  <hop> <from>TA Group by</from><to>Test 4</to><enabled>N</enabled> </hop>
+  <hop> <from>Select values 4</from><to>Status 4</to><enabled>N</enabled> </hop>
+  <hop> <from>Test 4</from><to>Group by 4</to><enabled>N</enabled> </hop>
+  <hop> <from>Unique rows  4</from><to>TA Group by</to><enabled>N</enabled> </hop>
+  <hop> <from>AN Merge Join</from><to>AN Missing Hours</to><enabled>Y</enabled> </hop>
+  <hop> <from>AN Missing Hours</from><to>AN  Join Rows &#x28;CP&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>AN  Join Rows &#x28;CP&#x29;</from><to>Unique rows  2</to><enabled>Y</enabled> </hop>
+  <hop> <from>LA Merge Join</from><to>LA Missing Hours</to><enabled>Y</enabled> </hop>
+  <hop> <from>LA Missing Hours</from><to>LA  Join Rows &#x28;CP&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>LA  Join Rows &#x28;CP&#x29;</from><to>Unique rows  3</to><enabled>Y</enabled> </hop>
+  <hop> <from>TA Merge Join</from><to>TA Missing Hours</to><enabled>N</enabled> </hop>
+  <hop> <from>TA Missing Hours</from><to>TA Join Rows &#x28;CP&#x29;</to><enabled>N</enabled> </hop>
+  <hop> <from>TA Join Rows &#x28;CP&#x29;</from><to>Unique rows  4</to><enabled>N</enabled> </hop>
+  <hop> <from>Status</from><to>LM &#x26; AN</to><enabled>Y</enabled> </hop>
+  <hop> <from>Status 2</from><to>LM &#x26; AN</to><enabled>Y</enabled> </hop>
+  <hop> <from>Status 3</from><to>LA &#x26; TA</to><enabled>Y</enabled> </hop>
+  <hop> <from>Status 4</from><to>LA &#x26; TA</to><enabled>N</enabled> </hop>
+  <hop> <from>LM &#x26; AN</from><to>Join Rows </to><enabled>Y</enabled> </hop>
+  <hop> <from>LA &#x26; TA</from><to>Join Rows </to><enabled>Y</enabled> </hop>
+  <hop> <from>Join Rows </from><to>Select values 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 5</from><to>Final Status</to><enabled>Y</enabled> </hop>
+  <hop> <from>Req Fields</from><to>constants</to><enabled>Y</enabled> </hop>
+  <hop> <from>constants</from><to>Mail</to><enabled>Y</enabled> </hop>
+  <hop> <from>Final Status</from><to>Req Fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Status 4</from><to>Join Rows </to><enabled>N</enabled> </hop>
+  </order>
+  <step>
+    <name>AN  Join Rows &#x28;CP&#x29;</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>547</xloc>
+      <yloc>161</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AN Dim Date</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>select timestamp from bi_dim_date where timestamp between &#x3f; and &#x3f; &#x3b;</sql>
+    <limit>0</limit>
+    <lookup>AN To Change Date Format</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>307</xloc>
+      <yloc>245</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AN Fact Data</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>SELECT b.timestamp,&#xd;&#xa;a.&#x60;energy_throughput&#x60; AS Energy_Throughput FROM  &#xd;&#xa;&#x28;SELECT &#x2a; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE bi_dim_fleet_id&#x3d;600 AND bi_dim_date_id IN &#x28;SELECT id FROM bi_dim_date WHERE TIMESTAMP BETWEEN &#x3f; AND &#x3f;&#x29; &#x29;a&#xd;&#xa;INNER JOIN &#x28;SELECT id,TIMESTAMP FROM bi_dim_date WHERE TIMESTAMP BETWEEN &#x3f; AND &#x3f;&#x29;b&#xd;&#xa;ON a.bi_dim_date_id&#x3d;b.id &#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup>AN From &#x26; To Dates</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>171</xloc>
+      <yloc>172</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AN From &#x26; To Dates</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>SELECT a.FromDate,a.ToDate,a.FromTimeDate,a.ToTimeDate&#xd;&#xa;FROM&#xd;&#xa;&#x28;SELECT &#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;600 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x27;&#x29;,INTERVAL 1 Day&#x29; AS FromDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;600 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;45&#x3a;00&#x27;&#x29;,INTERVAL 1 DAY&#x29; AS ToDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;600 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x27;&#x29;,INTERVAL 1 day&#x29; AS FromTimeDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;600 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;45&#x3a;00&#x27;&#x29;,INTERVAL 1 DAY&#x29; AS ToTimeDate&#x29;a</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>18</xloc>
+      <yloc>171</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AN Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>EnergyThroughputTempDays</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>EnergyThroughputTempHours</aggregate>
+          <subject>HourMinutes</subject>
+          <type>CONCAT_COMMA</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>FromDate</aggregate>
+          <subject>FromDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>ToDate</aggregate>
+          <subject>ToDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>764</xloc>
+      <yloc>159</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AN Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>RIGHT OUTER</join_type>
+<step1>AN Fact Data</step1>
+<step2>AN Dim Date</step2>
+    <keys_1>
+      <key>timestamp</key>
+      <key>Energy_Throughput</key>
+    </keys_1>
+    <keys_2>
+      <key>timestamp</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>304</xloc>
+      <yloc>168</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AN Missing Hours</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;var EnergyThroughputTempDays&#x3d;null&#x3b;&#xd;&#xa;var EnergyThroughputTempHours&#x3d;null&#x3b;&#xd;&#xa;var EnergyThroughputTempMinutes&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;var HourMinutes&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;Energy_Throughput&#x3d;&#x3d;null&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputTempDays&#x3d;date2str&#x28;timestamp_1,&#x22;dd.MM.yyyy&#x22;&#x29;&#x3b;&#xd;&#xa;EnergyThroughputTempHours&#x3d;timestamp_1.getHours&#x28;&#x29;&#x3b;&#xd;&#xa;EnergyThroughputTempMinutes&#x3d;timestamp_1.getMinutes&#x28;&#x29;&#x3b;&#xd;&#xa;HourMinutes&#x3d;EnergyThroughputTempHours&#x2b;&#x22;-&#x22;&#x2b;EnergyThroughputTempMinutes&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EnergyThroughputTempDays</name>
+        <rename>EnergyThroughputTempDays</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>HourMinutes</name>
+        <rename>HourMinutes</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>413</xloc>
+      <yloc>165</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AN To Change Date Format</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>154</xloc>
+      <yloc>244</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Final Status</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var ScadaStatus&#x3d;null&#x3b;&#xd;&#xa;var SubjectLine&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;var d1&#x3d;new Date&#x28;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa; ScadaStatus&#x3d;LMStatus&#x2b;&#x22;&#x5c;n &#x5c;n&#x22;&#x2b;ANStatus&#x2b;&#x22;&#x5c;n &#x5c;n&#x22;&#x2b;LAStatus&#x3b;&#xd;&#xa;&#x2f;&#x2f; ScadaStatus&#x3d;LMStatus&#x2b;&#x22;&#x5c;n &#x5c;n&#x22;&#x2b;TAStatus&#x3b;&#xd;&#xa;SubjectLine&#x3d;&#x22;All Projects Scada Data verification Status - &#x22;&#x2b;date2str&#x28;d1,&#x22;yyyy.MM.dd&#x22;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>getDayNumber_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Returns the number of a date, inside the&#xa;&#x2f;&#x2f; given type.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; getDayNumber&#x28;var,var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; Date - The Variable with the Date.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Type&#x3a;&#xa;&#x2f;&#x2f; y - Day in Year&#xa;&#x2f;&#x2f; m - Day in Month&#xa;&#x2f;&#x2f; w - Day in Week&#xa;&#x2f;&#x2f; wm - Day of Week in Month &#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;var d1 &#x3d; new Date&#x28;&#x29;&#x3b;&#xa;Alert&#x28;getDayNumber&#x28;d1, &#x22;y&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;getDayNumber&#x28;d1, &#x22;m&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;getDayNumber&#x28;d1, &#x22;w&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;getDayNumber&#x28;d1, &#x22;wm&#x22;&#x29;&#x29;&#x3b;&#xa;      </jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>date2str_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given Date to a string Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; date2str&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; Date - The Variable with the Date to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; date2str&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; Date - The Variable with the Date to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; date2str&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; Date - The Variable with the Date to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    A valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; date2str&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; Date - The Variable with the Date to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    A valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;var dValue &#x3d; new Date&#x28;&#x29;&#x3b;&#xa;Alert&#x28;date2str&#x28;dValue&#x29;&#x29;&#x3b;&#xa;Alert&#x28;date2str&#x28;dValue,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;date2str&#x28;dValue,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;date2str&#x28;dValue,&#x22;E.MMM.yyyy&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;date2str&#x28;dValue,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;date2str&#x28;dValue,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;EN&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;&#xa;     </jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>ScadaStatus</name>
+        <rename>ScadaStatus</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>SubjectLine</name>
+        <rename>SubjectLine</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1551</xloc>
+      <yloc>247</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>FromDate</aggregate>
+          <subject>FromDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>ToDate</aggregate>
+          <subject>ToDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>EnergyThroughput</aggregate>
+          <subject>EnergyThroughput</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>899</xloc>
+      <yloc>1</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group by 2</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>FromDate</aggregate>
+          <subject>FromDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>ToDate</aggregate>
+          <subject>ToDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>EnergyThroughput</aggregate>
+          <subject>EnergyThroughput</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>953</xloc>
+      <yloc>156</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group by 3</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>FromDate</aggregate>
+          <subject>FromDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>ToDate</aggregate>
+          <subject>ToDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>EnergyThroughput</aggregate>
+          <subject>EnergyThroughput</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>968</xloc>
+      <yloc>310</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group by 4</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+      </group>
+      <fields>
+        <field>
+          <aggregate>FromDate</aggregate>
+          <subject>FromDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>ToDate</aggregate>
+          <subject>ToDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>EnergyThroughput</aggregate>
+          <subject>EnergyThroughput</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>989</xloc>
+      <yloc>463</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Join Rows </name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1389</xloc>
+      <yloc>124</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA  Join Rows &#x28;CP&#x29;</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>569</xloc>
+      <yloc>321</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA &#x26; TA</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1239</xloc>
+      <yloc>303</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA Dim Date</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>select timestamp from bi_dim_date where timestamp between &#x3f; and &#x3f; &#x3b;</sql>
+    <limit>0</limit>
+    <lookup>LA To Change Date Format</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>322</xloc>
+      <yloc>414</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA Fact Data</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>SELECT b.timestamp,&#xd;&#xa;a.&#x60;energy_throughput&#x60; AS Energy_Throughput FROM &#xd;&#xa;&#x28;SELECT &#x2a; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE bi_dim_fleet_id&#x3d;400 AND bi_dim_date_id IN &#x28;SELECT id FROM bi_dim_date WHERE TIMESTAMP BETWEEN &#x3f; AND &#x3f;&#x29; &#x29;a&#xd;&#xa;INNER JOIN &#x28;SELECT id,TIMESTAMP FROM bi_dim_date WHERE TIMESTAMP BETWEEN &#x3f; AND &#x3f;&#x29;b&#xd;&#xa;ON a.bi_dim_date_id&#x3d;b.id &#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup>LA From &#x26; To Dates</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>167</xloc>
+      <yloc>321</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA From &#x26; To Dates</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>SELECT a.FromDate,a.ToDate,a.FromTimeDate,a.ToTimeDate&#xd;&#xa;FROM&#xd;&#xa;&#x28;SELECT &#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;400 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x27;&#x29;,INTERVAL 1 Day&#x29; AS FromDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;400 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;45&#x3a;00&#x27;&#x29;,INTERVAL 1 DAY&#x29; AS ToDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;400 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x27;&#x29;,INTERVAL 1 Day&#x29; AS FromTimeDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;400 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;45&#x3a;00&#x27;&#x29;,INTERVAL 1 DAY&#x29; AS ToTimeDate&#x29;a</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>30</xloc>
+      <yloc>321</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>EnergyThroughputTempDays</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>EnergyThroughputTempHours</aggregate>
+          <subject>HourMinutes</subject>
+          <type>CONCAT_COMMA</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>FromDate</aggregate>
+          <subject>FromDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>ToDate</aggregate>
+          <subject>ToDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>779</xloc>
+      <yloc>313</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>RIGHT OUTER</join_type>
+<step1>LA Fact Data</step1>
+<step2>LA Dim Date</step2>
+    <keys_1>
+      <key>timestamp</key>
+      <key>Energy_Throughput</key>
+    </keys_1>
+    <keys_2>
+      <key>timestamp</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>319</xloc>
+      <yloc>322</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA Missing Hours</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;var EnergyThroughputTempDays&#x3d;null&#x3b;&#xd;&#xa;var EnergyThroughputTempHours&#x3d;null&#x3b;&#xd;&#xa;var EnergyThroughputTempMinutes&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;var HourMinutes&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;Energy_Throughput&#x3d;&#x3d;null&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputTempDays&#x3d;date2str&#x28;timestamp_1,&#x22;dd.MM.yyyy&#x22;&#x29;&#x3b;&#xd;&#xa;EnergyThroughputTempHours&#x3d;timestamp_1.getHours&#x28;&#x29;&#x3b;&#xd;&#xa;EnergyThroughputTempMinutes&#x3d;timestamp_1.getMinutes&#x28;&#x29;&#x3b;&#xd;&#xa;HourMinutes&#x3d;EnergyThroughputTempHours&#x2b;&#x22;-&#x22;&#x2b;EnergyThroughputTempMinutes&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EnergyThroughputTempDays</name>
+        <rename>EnergyThroughputTempDays</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>HourMinutes</name>
+        <rename>HourMinutes</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>443</xloc>
+      <yloc>323</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LA To Change Date Format</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>165</xloc>
+      <yloc>409</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM &#x26; AN</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1213</xloc>
+      <yloc>114</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM Dim Date</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>select timestamp from bi_dim_date where timestamp between &#x3f; and &#x3f; &#x3b;</sql>
+    <limit>0</limit>
+    <lookup>LM To Change Date Format</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>281</xloc>
+      <yloc>84</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM Fact Data</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>SELECT b.timestamp,&#xd;&#xa;a.&#x60;energy_throughput&#x60; AS Energy_Throughput FROM &#xd;&#xa;&#x28;SELECT &#x2a; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE bi_dim_fleet_id&#x3d;500 AND bi_dim_date_id IN &#x28;SELECT id FROM bi_dim_date WHERE TIMESTAMP BETWEEN &#x3f; AND &#x3f;&#x29; &#x29;a&#xd;&#xa;INNER JOIN &#x28;SELECT id,TIMESTAMP FROM bi_dim_date WHERE TIMESTAMP BETWEEN &#x3f; AND &#x3f;&#x29;b&#xd;&#xa;ON a.bi_dim_date_id&#x3d;b.id &#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup>LM From &#x26; To Dates</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>130</xloc>
+      <yloc>14</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM From &#x26; To Dates</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>SELECT a.FromDate,a.ToDate,a.FromTimeDate,a.ToTimeDate&#xd;&#xa;FROM&#xd;&#xa;&#x28;SELECT &#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;500 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x27;&#x29;,INTERVAL 1 Day&#x29; AS FromDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;500 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;45&#x3a;00&#x27;&#x29;,INTERVAL 1 DAY&#x29; AS ToDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;500 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x27;&#x29;,INTERVAL 1 Day&#x29; AS FromTimeDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;500 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;45&#x3a;00&#x27;&#x29;,INTERVAL 1 DAY&#x29; AS ToTimeDate&#x29;a</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>7</xloc>
+      <yloc>15</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>EnergyThroughputTempDays</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>EnergyThroughputTempHours</aggregate>
+          <subject>HourMinutes</subject>
+          <type>CONCAT_COMMA</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>FromDate</aggregate>
+          <subject>FromDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>ToDate</aggregate>
+          <subject>ToDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>710</xloc>
+      <yloc>4</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM Join Rows &#x28;CP&#x29;</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>502</xloc>
+      <yloc>10</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>RIGHT OUTER</join_type>
+<step1>LM Fact Data</step1>
+<step2>LM Dim Date</step2>
+    <keys_1>
+      <key>timestamp</key>
+      <key>Energy_Throughput</key>
+    </keys_1>
+    <keys_2>
+      <key>timestamp</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>274</xloc>
+      <yloc>12</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM Missing Hours</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;var EnergyThroughputTempDays&#x3d;null&#x3b;&#xd;&#xa;var EnergyThroughputTempHours&#x3d;null&#x3b;&#xd;&#xa;var EnergyThroughputTempMinutes&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;var HourMinutes&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;Energy_Throughput&#x3d;&#x3d;null&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputTempDays&#x3d;date2str&#x28;timestamp_1,&#x22;dd.MM.yyyy&#x22;&#x29;&#x3b;&#xd;&#xa;EnergyThroughputTempHours&#x3d;timestamp_1.getHours&#x28;&#x29;&#x3b;&#xd;&#xa;EnergyThroughputTempMinutes&#x3d;timestamp_1.getMinutes&#x28;&#x29;&#x3b;&#xd;&#xa;HourMinutes&#x3d;EnergyThroughputTempHours&#x2b;&#x22;-&#x22;&#x2b;EnergyThroughputTempMinutes&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EnergyThroughputTempDays</name>
+        <rename>EnergyThroughputTempDays</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>HourMinutes</name>
+        <rename>HourMinutes</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>382</xloc>
+      <yloc>11</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LM To Change Date Format</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>123</xloc>
+      <yloc>88</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Mail</name>
+    <type>Mail</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <server>server</server>
+      <port>port</port>
+      <destination>destinationA</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyToAddresses/>
+      <replyto>senderA</replyto>
+      <replytoname>senderName</replytoname>
+      <subject>SubjectLine</subject>
+      <include_date>N</include_date>
+      <include_subfolders>N</include_subfolders>
+      <zipFilenameDynamic>N</zipFilenameDynamic>
+      <isFilenameDynamic>N</isFilenameDynamic>
+      <dynamicFieldname/>
+      <dynamicWildcard/>
+      <dynamicZipFilename/>
+      <sourcefilefoldername/>
+      <sourcewildcard/>
+      <contact_person/>
+      <contact_phone/>
+      <comment>ScadaStatus</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <zip_limit_size>0</zip_limit_size>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>senderA</auth_user>
+      <auth_password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2cfca</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>Y</use_Priority>
+    <encoding>UTF-8</encoding>
+    <priority>normal</priority>
+    <importance>normal</importance>
+    <secureconnectiontype>TLS</secureconnectiontype>
+      <embeddedimages>
+      </embeddedimages>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1857</xloc>
+      <yloc>248</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Req Fields</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>ScadaStatus</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SubjectLine</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1672</xloc>
+      <yloc>248</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EnergyThroughput</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>985</xloc>
+      <yloc>3</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EnergyThroughput</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1039</xloc>
+      <yloc>158</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EnergyThroughput</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1054</xloc>
+      <yloc>312</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EnergyThroughput</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1075</xloc>
+      <yloc>465</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 5</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>LMStatus</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ANStatus</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>LAStatus</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1435</xloc>
+      <yloc>246</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Status</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var EnergyThroughputStatus&#x3b;&#xd;&#xa;var LMStatus&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;EnergyThroughput&#x3d;&#x3d;&#x27;undefined&#x27;&#x29;&#x7c;&#x7c;&#x28;EnergyThroughput&#x3d;&#x3d;null&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputStatus&#x3d;&#x22;Energy Throughput data has complete day data of &#x22;&#x2b;FromDate&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputStatus&#x3d;&#x22;Energy Throughput data is missing for following hours of &#x22;&#x2b;FromDate&#x2b;&#x22;&#x3a; &#x5c;n&#x22;&#x2b;EnergyThroughput&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;LMStatus&#x3d;&#x22;Laurel Mountain &#x3a; &#x5c;n&#x22;&#x2b;EnergyThroughputStatus&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given String to a date Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; str2date&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006&#x22;,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;Tue.May.2006&#x22;,&#x22;E.MMM.yyyy&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>substr_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Perform the substring function&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; substr&#x28;var, from&#x29;&#x3b;&#xa;&#x2f;&#x2f; substr&#x28;var, from, to&#x29;&#x3b;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-01-25&#xa;&#x2f;&#x2f;&#xa;var str1&#x3d; &#x22;Hello Pentaho&#x21;&#x22;&#x3b;&#xa;var str2&#x3d; substr&#x28;str1, 6&#x29;&#x3b;&#xa;var str3&#x3d; substr&#x28;str1, 6, 7&#x29;&#x3b;&#xa;Alert&#x28;&#x22;Input &#x3a; &#x22; &#x2b; str1&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6&#x3a; &#x22; &#x2b; str2&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6 for 7 long &#x3a; &#x22; &#x2b; str3&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>LMStatus</name>
+        <rename>LMStatus</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1063</xloc>
+      <yloc>0</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Status 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var EnergyThroughputStatus&#x3b;&#xd;&#xa;var ANStatus&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;EnergyThroughput&#x3d;&#x3d;&#x27;undefined&#x27;&#x29;&#x7c;&#x7c;&#x28;EnergyThroughput&#x3d;&#x3d;null&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputStatus&#x3d;&#x22;Energy Throughput data has complete day data of &#x22;&#x2b;FromDate&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputStatus&#x3d;&#x22;Energy Throughput data is missing for following hours of &#x22;&#x2b;FromDate&#x2b;&#x22;&#x3a; &#x5c;n&#x22;&#x2b;EnergyThroughput&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;ANStatus&#x3d;&#x22;Angamos &#x3a; &#x5c;n&#x22;&#x2b;EnergyThroughputStatus&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given String to a date Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; str2date&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006&#x22;,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;Tue.May.2006&#x22;,&#x22;E.MMM.yyyy&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>substr_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Perform the substring function&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; substr&#x28;var, from&#x29;&#x3b;&#xa;&#x2f;&#x2f; substr&#x28;var, from, to&#x29;&#x3b;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-01-25&#xa;&#x2f;&#x2f;&#xa;var str1&#x3d; &#x22;Hello Pentaho&#x21;&#x22;&#x3b;&#xa;var str2&#x3d; substr&#x28;str1, 6&#x29;&#x3b;&#xa;var str3&#x3d; substr&#x28;str1, 6, 7&#x29;&#x3b;&#xa;Alert&#x28;&#x22;Input &#x3a; &#x22; &#x2b; str1&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6&#x3a; &#x22; &#x2b; str2&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6 for 7 long &#x3a; &#x22; &#x2b; str3&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>ANStatus</name>
+        <rename>ANStatus</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1117</xloc>
+      <yloc>155</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Status 3</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var EnergyThroughputStatus&#x3b;&#xd;&#xa;&#xd;&#xa;var LAStatus&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;EnergyThroughput&#x3d;&#x3d;&#x27;undefined&#x27;&#x29;&#x7c;&#x7c;&#x28;EnergyThroughput&#x3d;&#x3d;null&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputStatus&#x3d;&#x22;Energy Throughput data has complete day data of&#x22;&#x2b;FromDate&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputStatus&#x3d;&#x22;Energy Throughput data is missing for following hours of &#x22;&#x2b;FromDate&#x2b;&#x22;&#x3a; &#x5c;n&#x22;&#x2b;EnergyThroughput&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;LAStatus&#x3d;&#x22;Los Andes &#x3a; &#x5c;n&#x22;&#x2b;EnergyThroughputStatus&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given String to a date Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; str2date&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006&#x22;,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;Tue.May.2006&#x22;,&#x22;E.MMM.yyyy&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>substr_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Perform the substring function&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; substr&#x28;var, from&#x29;&#x3b;&#xa;&#x2f;&#x2f; substr&#x28;var, from, to&#x29;&#x3b;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-01-25&#xa;&#x2f;&#x2f;&#xa;var str1&#x3d; &#x22;Hello Pentaho&#x21;&#x22;&#x3b;&#xa;var str2&#x3d; substr&#x28;str1, 6&#x29;&#x3b;&#xa;var str3&#x3d; substr&#x28;str1, 6, 7&#x29;&#x3b;&#xa;Alert&#x28;&#x22;Input &#x3a; &#x22; &#x2b; str1&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6&#x3a; &#x22; &#x2b; str2&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6 for 7 long &#x3a; &#x22; &#x2b; str3&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>LAStatus</name>
+        <rename>LAStatus</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1132</xloc>
+      <yloc>309</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Status 4</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var EnergyThroughputStatus&#x3b;&#xd;&#xa;var TAStatus&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;EnergyThroughput&#x3d;&#x3d;&#x27;undefined&#x27;&#x29;&#x7c;&#x7c;&#x28;EnergyThroughput&#x3d;&#x3d;null&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputStatus&#x3d;&#x22;Energy Throughput data has complete day data of &#x22;&#x2b;FromDate&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputStatus&#x3d;&#x22;Energy Throughput data is missing for following hours of &#x22;&#x2b;FromDate&#x2b;&#x22;&#x3a; &#x5c;n&#x22;&#x2b;EnergyThroughput&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;TAStatus&#x3d;&#x22;Tait &#x3a; &#x5c;n&#x22;&#x2b;EnergyThroughputStatus&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given String to a date Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; str2date&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006&#x22;,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;Tue.May.2006&#x22;,&#x22;E.MMM.yyyy&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>substr_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Perform the substring function&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; substr&#x28;var, from&#x29;&#x3b;&#xa;&#x2f;&#x2f; substr&#x28;var, from, to&#x29;&#x3b;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-01-25&#xa;&#x2f;&#x2f;&#xa;var str1&#x3d; &#x22;Hello Pentaho&#x21;&#x22;&#x3b;&#xa;var str2&#x3d; substr&#x28;str1, 6&#x29;&#x3b;&#xa;var str3&#x3d; substr&#x28;str1, 6, 7&#x29;&#x3b;&#xa;Alert&#x28;&#x22;Input &#x3a; &#x22; &#x2b; str1&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6&#x3a; &#x22; &#x2b; str2&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6 for 7 long &#x3a; &#x22; &#x2b; str3&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>TAStatus</name>
+        <rename>TAStatus</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1284</xloc>
+      <yloc>457</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TA Dim Date</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>select timestamp from bi_dim_date where timestamp between &#x3f; and &#x3f; &#x3b;</sql>
+    <limit>0</limit>
+    <lookup>TA To Change Date Format</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>335</xloc>
+      <yloc>568</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TA Fact Data</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>SELECT b.timestamp,&#xd;&#xa;a.&#x60;energy_throughput&#x60; AS Energy_Throughput FROM &#xd;&#xa;&#x28;SELECT &#x2a; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE bi_dim_fleet_id&#x3d;700 AND bi_dim_date_id IN &#x28;SELECT id FROM bi_dim_date WHERE TIMESTAMP BETWEEN &#x3f; AND &#x3f;&#x29; &#x29;a&#xd;&#xa;INNER JOIN &#x28;SELECT id,TIMESTAMP FROM bi_dim_date WHERE TIMESTAMP BETWEEN &#x3f; AND &#x3f;&#x29;b&#xd;&#xa;ON a.bi_dim_date_id&#x3d;b.id &#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup>TA From &#x26; To Dates</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>164</xloc>
+      <yloc>473</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TA From &#x26; To Dates</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>aeses</connection>
+    <sql>SELECT a.FromDate,a.ToDate,a.FromTimeDate,a.ToTimeDate&#xd;&#xa;FROM&#xd;&#xa;&#x28;SELECT &#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;700 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x27;&#x29;,INTERVAL 1 Day&#x29; AS FromDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;700 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;45&#x3a;00&#x27;&#x29;,INTERVAL 1 DAY&#x29; AS ToDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;700 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 00&#x3a;00&#x3a;00&#x27;&#x29;,INTERVAL 1 Day&#x29; AS FromTimeDate,&#xd;&#xa;DATE_SUB&#x28;DATE_FORMAT&#x28;&#x28;SELECT TIMESTAMP FROM bi_dim_date WHERE id &#x3d;&#x28;SELECT MAX&#x28;&#x60;bi_dim_date_id&#x60;&#x29; FROM &#x60;bi_fact_fleet_kpis&#x60; WHERE &#x60;bi_dim_fleet_id&#x60;&#x3d;700 and &#x60;energy_throughput&#x60; IS NOT NULL&#x29;&#x29;,&#x27;&#x25;Y-&#x25;m-&#x25;d 23&#x3a;45&#x3a;00&#x27;&#x29;,INTERVAL 1 DAY&#x29; AS ToTimeDate&#x29;a</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>8</xloc>
+      <yloc>473</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TA Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>EnergyThroughputTempDays</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>EnergyThroughputTempHours</aggregate>
+          <subject>HourMinutes</subject>
+          <type>CONCAT_COMMA</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>FromDate</aggregate>
+          <subject>FromDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>ToDate</aggregate>
+          <subject>ToDate</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>466</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TA Join Rows &#x28;CP&#x29;</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>597</xloc>
+      <yloc>469</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TA Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>RIGHT OUTER</join_type>
+<step1>TA Fact Data</step1>
+<step2>TA Dim Date</step2>
+    <keys_1>
+      <key>timestamp</key>
+      <key>Energy_Throughput</key>
+    </keys_1>
+    <keys_2>
+      <key>timestamp</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>332</xloc>
+      <yloc>473</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TA Missing Hours</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;var EnergyThroughputTempDays&#x3d;null&#x3b;&#xd;&#xa;var EnergyThroughputTempHours&#x3d;null&#x3b;&#xd;&#xa;var EnergyThroughputTempMinutes&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;var HourMinutes&#x3d;null&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;Energy_Throughput&#x3d;&#x3d;null&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughputTempDays&#x3d;date2str&#x28;timestamp_1,&#x22;dd.MM.yyyy&#x22;&#x29;&#x3b;&#xd;&#xa;EnergyThroughputTempHours&#x3d;timestamp_1.getHours&#x28;&#x29;&#x3b;&#xd;&#xa;EnergyThroughputTempMinutes&#x3d;timestamp_1.getMinutes&#x28;&#x29;&#x3b;&#xd;&#xa;HourMinutes&#x3d;EnergyThroughputTempHours&#x2b;&#x22;-&#x22;&#x2b;EnergyThroughputTempMinutes&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EnergyThroughputTempDays</name>
+        <rename>EnergyThroughputTempDays</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>HourMinutes</name>
+        <rename>HourMinutes</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>459</xloc>
+      <yloc>475</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>TA To Change Date Format</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FromDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ToDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FromDate</name>
+        <rename>FromDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ToDate</name>
+        <rename>ToDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>171</xloc>
+      <yloc>574</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Test</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var EnergyThroughput&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;&#x28;EnergyThroughputTempDays &#x21;&#x3d; null&#x29; &#x26;&#x26; &#x28;EnergyThroughputTempDays &#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#x26;&#x26;&#x28;typeof EnergyThroughput&#x3d;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughput&#x3d;&#x22;Date &#x3a; &#x22;&#x2b;EnergyThroughputTempDays&#x2b;&#x22;&#x5c;nHours &#x3a; &#x22;&#x2b;EnergyThroughputTempHours&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if&#x28;&#x28;&#x28;EnergyThroughputTempDays &#x21;&#x3d; null&#x29; &#x26;&#x26; &#x28;EnergyThroughputTempDays &#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#x26;&#x26;&#x28;EnergyThroughput&#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughput&#x3d;EnergyThroughput&#x2b;&#x22;&#x5c;n&#x22;&#x2b;&#x22;Date &#x3a; &#x22;&#x2b;EnergyThroughputTempDays&#x2b;&#x22;&#x5c;nHours &#x3a; &#x22;&#x2b;EnergyThroughputTempHours&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given String to a date Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; str2date&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006&#x22;,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;Tue.May.2006&#x22;,&#x22;E.MMM.yyyy&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>substr_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Perform the substring function&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; substr&#x28;var, from&#x29;&#x3b;&#xa;&#x2f;&#x2f; substr&#x28;var, from, to&#x29;&#x3b;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-01-25&#xa;&#x2f;&#x2f;&#xa;var str1&#x3d; &#x22;Hello Pentaho&#x21;&#x22;&#x3b;&#xa;var str2&#x3d; substr&#x28;str1, 6&#x29;&#x3b;&#xa;var str3&#x3d; substr&#x28;str1, 6, 7&#x29;&#x3b;&#xa;Alert&#x28;&#x22;Input &#x3a; &#x22; &#x2b; str1&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6&#x3a; &#x22; &#x2b; str2&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6 for 7 long &#x3a; &#x22; &#x2b; str3&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EnergyThroughput</name>
+        <rename>EnergyThroughput</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>4</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Test 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var EnergyThroughput&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;&#x28;EnergyThroughputTempDays &#x21;&#x3d; null&#x29; &#x26;&#x26; &#x28;EnergyThroughputTempDays &#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#x26;&#x26;&#x28;typeof EnergyThroughput&#x3d;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughput&#x3d;&#x22;Date &#x3a; &#x22;&#x2b;EnergyThroughputTempDays&#x2b;&#x22;&#x5c;nHours &#x3a; &#x22;&#x2b;EnergyThroughputTempHours&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if&#x28;&#x28;&#x28;EnergyThroughputTempDays &#x21;&#x3d; null&#x29; &#x26;&#x26; &#x28;EnergyThroughputTempDays &#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#x26;&#x26;&#x28;EnergyThroughput&#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughput&#x3d;EnergyThroughput&#x2b;&#x22;&#x5c;n&#x22;&#x2b;&#x22;Date &#x3a; &#x22;&#x2b;EnergyThroughputTempDays&#x2b;&#x22;&#x5c;nHours &#x3a; &#x22;&#x2b;EnergyThroughputTempHours&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given String to a date Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; str2date&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006&#x22;,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;Tue.May.2006&#x22;,&#x22;E.MMM.yyyy&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>substr_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Perform the substring function&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; substr&#x28;var, from&#x29;&#x3b;&#xa;&#x2f;&#x2f; substr&#x28;var, from, to&#x29;&#x3b;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-01-25&#xa;&#x2f;&#x2f;&#xa;var str1&#x3d; &#x22;Hello Pentaho&#x21;&#x22;&#x3b;&#xa;var str2&#x3d; substr&#x28;str1, 6&#x29;&#x3b;&#xa;var str3&#x3d; substr&#x28;str1, 6, 7&#x29;&#x3b;&#xa;Alert&#x28;&#x22;Input &#x3a; &#x22; &#x2b; str1&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6&#x3a; &#x22; &#x2b; str2&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6 for 7 long &#x3a; &#x22; &#x2b; str3&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EnergyThroughput</name>
+        <rename>EnergyThroughput</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>854</xloc>
+      <yloc>159</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Test 3</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var EnergyThroughput&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;&#x28;EnergyThroughputTempDays &#x21;&#x3d; null&#x29; &#x26;&#x26; &#x28;EnergyThroughputTempDays &#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#x26;&#x26;&#x28;typeof EnergyThroughput&#x3d;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughput&#x3d;&#x22;Date &#x3a; &#x22;&#x2b;EnergyThroughputTempDays&#x2b;&#x22;&#x5c;nHours &#x3a; &#x22;&#x2b;EnergyThroughputTempHours&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if&#x28;&#x28;&#x28;EnergyThroughputTempDays &#x21;&#x3d; null&#x29; &#x26;&#x26; &#x28;EnergyThroughputTempDays &#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#x26;&#x26;&#x28;EnergyThroughput&#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughput&#x3d;EnergyThroughput&#x2b;&#x22;&#x5c;n&#x22;&#x2b;&#x22;Date &#x3a; &#x22;&#x2b;EnergyThroughputTempDays&#x2b;&#x22;&#x5c;nHours &#x3a; &#x22;&#x2b;EnergyThroughputTempHours&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given String to a date Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; str2date&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006&#x22;,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;Tue.May.2006&#x22;,&#x22;E.MMM.yyyy&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>substr_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Perform the substring function&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; substr&#x28;var, from&#x29;&#x3b;&#xa;&#x2f;&#x2f; substr&#x28;var, from, to&#x29;&#x3b;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-01-25&#xa;&#x2f;&#x2f;&#xa;var str1&#x3d; &#x22;Hello Pentaho&#x21;&#x22;&#x3b;&#xa;var str2&#x3d; substr&#x28;str1, 6&#x29;&#x3b;&#xa;var str3&#x3d; substr&#x28;str1, 6, 7&#x29;&#x3b;&#xa;Alert&#x28;&#x22;Input &#x3a; &#x22; &#x2b; str1&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6&#x3a; &#x22; &#x2b; str2&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6 for 7 long &#x3a; &#x22; &#x2b; str3&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EnergyThroughput</name>
+        <rename>EnergyThroughput</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>869</xloc>
+      <yloc>313</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Test 4</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var EnergyThroughput&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;&#x28;&#x28;EnergyThroughputTempDays &#x21;&#x3d; null&#x29; &#x26;&#x26; &#x28;EnergyThroughputTempDays &#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#x26;&#x26;&#x28;typeof EnergyThroughput&#x3d;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughput&#x3d;&#x22;Date &#x3a; &#x22;&#x2b;EnergyThroughputTempDays&#x2b;&#x22;&#x5c;nHours &#x3a; &#x22;&#x2b;EnergyThroughputTempHours&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if&#x28;&#x28;&#x28;EnergyThroughputTempDays &#x21;&#x3d; null&#x29; &#x26;&#x26; &#x28;EnergyThroughputTempDays &#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#x26;&#x26;&#x28;EnergyThroughput&#x21;&#x3d;&#x27;undefined&#x27;&#x29;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;EnergyThroughput&#x3d;EnergyThroughput&#x2b;&#x22;&#x5c;n&#x22;&#x2b;&#x22;Date &#x3a; &#x22;&#x2b;EnergyThroughputTempDays&#x2b;&#x22;&#x5c;nHours &#x3a; &#x22;&#x2b;EnergyThroughputTempHours&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2date_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Converts the given String to a date Value.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; str2date&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; This call uses your localized format.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f;        yy &#x2f; yyyy - 06 &#x2f; 2006&#xa;&#x2f;&#x2f;        MM &#x2f; MMM &#x2f; MMMMM - 11 &#x2f; Nov &#x2f; November&#xa;&#x2f;&#x2f;        d &#x2f; dd  - 1 &#x2f; 01&#xa;&#x2f;&#x2f;        E &#x2f; EEEE - Tue &#x2f; Tuesday&#xa;&#x2f;&#x2f;        hh &#x2f; HH - 11 &#x2f; 23&#xa;&#x2f;&#x2f;        m &#x2f; mm - 5 &#x2f; 05&#xa;&#x2f;&#x2f;        s &#x2f; ss - 8 &#x2f; 08&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; str2date&#x28;var, var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the String to convert.&#xa;&#x2f;&#x2f; 2&#x3a; String - The Format&#x3a;&#xa;&#x2f;&#x2f; 3&#x3a; String - The Locale Parameter&#xa;&#x2f;&#x2f;    An valid ISO Language Code. &#x28;DE &#x3d; German, EN &#x3d; English, FR &#x3d; France, ...&#x29;&#xa;&#x2f;&#x2f; 4&#x3a; String - The Timezone Parameter.&#xa;&#x2f;&#x2f;    A valid timezone&#x3a; EST, GMT, ... &#x28;if invalid GMT will be selected as default&#x29;&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006&#x22;,&#x22;dd.MM.yyyy&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;01.12.2006 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;Tue.May.2006&#x22;,&#x22;E.MMM.yyyy&#x22;,&#x22;EN&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;&#x29;&#x29;&#x3b;&#xa;Alert&#x28;str2date&#x28;&#x22;22.02.2008 23&#x3a;23&#x3a;01&#x22;,&#x22;dd.MM.yyyy HH&#x3a;mm&#x3a;ss&#x22;,&#x22;DE&#x22;, &#x22;EST&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>substr_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Perform the substring function&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; substr&#x28;var, from&#x29;&#x3b;&#xa;&#x2f;&#x2f; substr&#x28;var, from, to&#x29;&#x3b;&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-01-25&#xa;&#x2f;&#x2f;&#xa;var str1&#x3d; &#x22;Hello Pentaho&#x21;&#x22;&#x3b;&#xa;var str2&#x3d; substr&#x28;str1, 6&#x29;&#x3b;&#xa;var str3&#x3d; substr&#x28;str1, 6, 7&#x29;&#x3b;&#xa;Alert&#x28;&#x22;Input &#x3a; &#x22; &#x2b; str1&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6&#x3a; &#x22; &#x2b; str2&#x29;&#x3b;&#xa;Alert&#x28;&#x22;From position 6 for 7 long &#x3a; &#x22; &#x2b; str3&#x29;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EnergyThroughput</name>
+        <rename>EnergyThroughput</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>890</xloc>
+      <yloc>466</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows </name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>N</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>EnergyThroughputTempDays</name>
+        </field>      <field>        <name>HourMinutes</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>615</xloc>
+      <yloc>6</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows  2</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>N</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>EnergyThroughputTempDays</name>
+        </field>      <field>        <name>HourMinutes</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>669</xloc>
+      <yloc>161</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows  3</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>N</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>EnergyThroughputTempDays</name>
+        </field>      <field>        <name>HourMinutes</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>684</xloc>
+      <yloc>315</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows  4</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <store_values>N</store_values>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>EnergyThroughputTempDays</name>
+        </field>      <field>        <name>HourMinutes</name>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>705</xloc>
+      <yloc>468</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>senderA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>aescrowd&#x40;gmail.com</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>destinationA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>sivanagireddy.c&#x40;sigmainfo.net, nagraj.rao&#x40;sigmainfo.net, rubyantonie.t&#x40;sigmainfo.net, yosha.s&#x40;sigmainfo.net</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>senderName</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>aeses.oss</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>port</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>587</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>server</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>smtp.gmail.com</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>p</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>aescrowd123</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1765</xloc>
+      <yloc>252</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>

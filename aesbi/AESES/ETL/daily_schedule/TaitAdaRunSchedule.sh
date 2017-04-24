@@ -1,0 +1,2 @@
+cd /usr/local/pentaho_bi_suite/pentaho/design-tools/data-integration	
+./kitchen.sh -file=/usr/local/data/bi_data/ETL/Google_docs/job_f_google_doc_data_process.kjb -level=Basic > /usr/local/data/bi_data/logs/job_f_google_doc_data_process.log

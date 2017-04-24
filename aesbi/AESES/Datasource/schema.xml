@@ -1,0 +1,971 @@
+<Schema name="MarketEnergyChartQuery">
+  <Dimension name="clearing_price">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="clearing_price" uniqueMembers="false" column="clearing_price" type="Numeric">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="iso">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="iso" uniqueMembers="false" column="iso" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="market">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="market" uniqueMembers="false" column="market" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="ninety_day_avg">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="ninety_day_avg" uniqueMembers="false" column="ninety_day_avg" type="Numeric">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="one_year_avg">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="one_year_avg" uniqueMembers="false" column="one_year_avg" type="Numeric">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="service">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="service" uniqueMembers="false" column="service" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="thirty_day_avg">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="thirty_day_avg" uniqueMembers="false" column="thirty_day_avg" type="Numeric">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="Timestamp">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="Timestamp" uniqueMembers="false" column="Timestamp">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="zone">
+    <Hierarchy hasAll="true">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+      <Level name="zone" uniqueMembers="false" column="zone" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="MarketEnergyChartQuery">
+    <View alias="FACT">
+        <SQL dialect="generic">
+         <![CDATA[SELECT a.Timestamp,
+a.clearing_price,
+a.thirty_day_avg,
+a.ninety_day_avg,
+a.one_year_avg,
+b.iso,
+b.market,
+b.service,
+b.zone
+FROM
+(-- NYISO DAM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Day-Ahead Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- NYISO Real Time
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id IN (SELECT id FROM bi_dim_market WHERE iso='NYISO' AND market='Real-Time Energy' AND service='Energy')
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(CURDATE(), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=CURDATE())) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- ERCOT
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=2009
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'),INTERVAL 1 MONTH) AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC)
+UNION
+-- PJM
+(SELECT DATE(b.timestamp) AS TIMESTAMP,
+AVG(a.clearing_price)AS clearing_price,
+AVG(a.thirty_day_avg)AS thirty_day_avg,
+AVG(a.ninety_day_avg)AS ninety_day_avg,
+AVG(a.one_year_avg)AS one_year_avg,
+a.bi_dim_market_id
+FROM (SELECT* FROM bi_fact_markets_part WHERE bi_dim_market_id=7
+AND bi_dim_date_id BETWEEN 
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP = DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH))
+AND
+(SELECT id FROM bi_dim_date WHERE TIMESTAMP=DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00'))) a
+INNER JOIN 
+(SELECT * FROM bi_dim_date WHERE TIMESTAMP BETWEEN DATE_SUB(DATE_FORMAT(CURDATE(),'%Y-%m-%d 00:00:00'), INTERVAL 1 MONTH)
+AND DATE_FORMAT(CURDATE(),'%Y-%m-%d 23:45:00')) b
+ ON a.bi_dim_date_id = b.id 
+GROUP BY DATE(b.timestamp)
+ORDER BY  DATE(b.timestamp) ASC))a
+INNER JOIN
+(SELECT iso,market,service,zone,id FROM bi_dim_market)b
+ON a.bi_dim_market_id=b.id
+]]>
+        </SQL>
+    </View>
+    <DimensionUsage name="clearing_price" source="clearing_price"/>
+    <DimensionUsage name="iso" source="iso"/>
+    <DimensionUsage name="market" source="market"/>
+    <DimensionUsage name="ninety_day_avg" source="ninety_day_avg"/>
+    <DimensionUsage name="one_year_avg" source="one_year_avg"/>
+    <DimensionUsage name="service" source="service"/>
+    <DimensionUsage name="thirty_day_avg" source="thirty_day_avg"/>
+    <DimensionUsage name="Timestamp" source="Timestamp"/>
+    <DimensionUsage name="zone" source="zone"/>
+    <Measure name="clearing_price" column="clearing_price" aggregator="sum" formatString="&#x23;"/>
+    <Measure name="ninety_day_avg" column="ninety_day_avg" aggregator="sum" formatString="&#x23;"/>
+    <Measure name="one_year_avg" column="one_year_avg" aggregator="sum" formatString="&#x23;"/>
+    <Measure name="thirty_day_avg" column="thirty_day_avg" aggregator="sum" formatString="&#x23;"/>
+  </Cube>
+</Schema>

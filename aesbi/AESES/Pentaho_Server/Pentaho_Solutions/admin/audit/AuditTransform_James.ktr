@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>Audit Reporting Populate 1</name>
+    <directory>/</directory>
+    <log>
+      <read/>
+      <write/>
+      <input/>
+      <output/>
+      <update/>
+      <connection/>
+      <table/>
+      <use_batchid>N</use_batchid>
+      <use_logfield>N</use_logfield>
+      </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+      </maxdate>
+    <size_rowset>350</size_rowset>
+    <sleep_time_empty>1</sleep_time_empty>
+    <sleep_time_full>1</sleep_time_full>
+    <dependencies>
+      </dependencies>
+    </info>
+  <notepads>
+    </notepads>
+  <connection>
+    <name>Demographics</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>TPCH</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>tpch</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Bugs</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>bugs</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>SpectrumData</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>reporting</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>reporting</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>reporting</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Pentaho</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Pentaho Audit</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>pentaho_audit</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Session start</from><to>Session start filter</to><enabled>Y</enabled> </hop>  <hop> <from>Session start</from><to>Instance Start</to><enabled>Y</enabled> </hop>  <hop> <from>Instance Start</from><to>Instance start filter</to><enabled>Y</enabled> </hop>  <hop> <from>Instance Start</from><to>Instance End</to><enabled>Y</enabled> </hop>  <hop> <from>Instance End</from><to>Instance end filter</to><enabled>Y</enabled> </hop>  <hop> <from>Component Ended</from><to>Component end filter</to><enabled>Y</enabled> </hop>  <hop> <from>Component Ended</from><to>Component Failed</to><enabled>Y</enabled> </hop>  <hop> <from>Component Failed</from><to>Component failed filter</to><enabled>Y</enabled> </hop>  <hop> <from>Component end filter</from><to>Java Script Value</to><enabled>Y</enabled> </hop>  <hop> <from>Java Script Value</from><to>Component start table</to><enabled>Y</enabled> </hop>  <hop> <from>Component failed filter</from><to>Java Script Value 2</to><enabled>Y</enabled> </hop>  <hop> <from>Java Script Value 2</from><to>Component start table - fail</to><enabled>Y</enabled> </hop>  <hop> <from>Component Failed</from><to>Dummy (do nothing)</to><enabled>Y</enabled> </hop>  <hop> <from>Instance start filter</from><to>Java Script Value 3</to><enabled>Y</enabled> </hop>  <hop> <from>Java Script Value 3</from><to>Instance start table</to><enabled>Y</enabled> </hop>  <hop> <from>Instance end filter</from><to>Java Script Value 4</to><enabled>Y</enabled> </hop>  <hop> <from>Java Script Value 4</from><to>Instance end table</to><enabled>Y</enabled> </hop>  <hop> <from>Instance End</from><to>Instance Fail</to><enabled>Y</enabled> </hop>  <hop> <from>Instance fail filter</from><to>Java Script Value 4 2</to><enabled>Y</enabled> </hop>  <hop> <from>Java Script Value 4 2</from><to>Instance end table 2</to><enabled>Y</enabled> </hop>  <hop> <from>Instance Fail</from><to>Instance fail filter</to><enabled>Y</enabled> </hop>  <hop> <from>Instance Fail</from><to>Component Ended</to><enabled>Y</enabled> </hop>  <hop> <from>Text file input</from><to>Session start</to><enabled>Y</enabled> </hop>  <hop> <from>Table input</from><to>Merge Rows</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Rows</from><to>Filter rows</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Text file output</to><enabled>Y</enabled> </hop>  <hop> <from>Session start filter</from><to>Merge Rows</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Session table</to><enabled>Y</enabled> </hop>  </order>
+
+  <step>
+    <name>Component Ended</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+<send_true_to>Component end filter</send_true_to>
+<send_false_to>Component Failed</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>message_type</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+<value>     <name>constant</name><type>String</type><text>component_execution_ended</text><length>-1</length><precision>-1</precision><isnull>N</isnull>  </value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+    <GUI>
+      <xloc>481</xloc>
+      <yloc>635</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Component Failed</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+<send_true_to>Component failed filter</send_true_to>
+<send_false_to>Dummy (do nothing)</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>message_type</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+<value>     <name>constant</name><type>String</type><text>component_execution_failed</text><length>-1</length><precision>-1</precision><isnull>N</isnull>  </value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>737</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Component end filter</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <fields>      <field>        <name>timestamp</name>
+        <rename>start</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>job_id</name>
+        <rename>service_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>instance_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>object_id</name>
+        <rename>content_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>object_type</name>
+        <rename>component_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>actor</name>
+        <rename>user</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>duration</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      </fields>    <GUI>
+      <xloc>636</xloc>
+      <yloc>635</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Component failed filter</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <fields>      <field>        <name>timestamp</name>
+        <rename>start</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>job_id</name>
+        <rename>service_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>instance_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>object_id</name>
+        <rename>content_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>object_type</name>
+        <rename>component_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>actor</name>
+        <rename>user</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>message_text_value</name>
+        <rename>message</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>duration</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      </fields>    <GUI>
+      <xloc>636</xloc>
+      <yloc>736</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Component start table</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <connection>Pentaho Audit</connection>
+    <table>COMPONENTS</table>
+    <commit>5000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <GUI>
+      <xloc>911</xloc>
+      <yloc>634</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Component start table - fail</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <connection>Pentaho Audit</connection>
+    <table>COMPONENTS</table>
+    <commit>5000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <GUI>
+      <xloc>914</xloc>
+      <yloc>737</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>477</xloc>
+      <yloc>932</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance End</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+<send_true_to>Instance end filter</send_true_to>
+<send_false_to>Instance Fail</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>message_type</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+<value>     <name>constant</name><type>String</type><text>instance_end</text><length>-1</length><precision>-1</precision><isnull>N</isnull>  </value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+    <GUI>
+      <xloc>481</xloc>
+      <yloc>439</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance Fail</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+<send_true_to>Instance fail filter</send_true_to>
+<send_false_to>Component Ended</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>message_type</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+<value>     <name>constant</name><type>String</type><text>instance_failed</text><length>-1</length><precision>-1</precision><isnull>N</isnull>  </value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>537</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance Start</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+<send_true_to>Instance start filter</send_true_to>
+<send_false_to>Instance End</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>message_type</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+<value>     <name>constant</name><type>String</type><text>instance_start</text><length>-1</length><precision>-1</precision><isnull>N</isnull>  </value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+    <GUI>
+      <xloc>482</xloc>
+      <yloc>341</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance end filter</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <fields>      <field>        <name>message_name</name>
+        <rename>instance_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>duration</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      </fields>    <GUI>
+      <xloc>638</xloc>
+      <yloc>438</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance end table</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <connection>Pentaho Audit</connection>
+    <table>INSTANCE_END</table>
+    <commit>5000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <GUI>
+      <xloc>908</xloc>
+      <yloc>439</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance end table 2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <connection>Pentaho Audit</connection>
+    <table>INSTANCE_END</table>
+    <commit>5000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <GUI>
+      <xloc>909</xloc>
+      <yloc>538</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance fail filter</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <fields>      <field>        <name>message_name</name>
+        <rename>instance_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>duration</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      </fields>    <GUI>
+      <xloc>640</xloc>
+      <yloc>537</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance start filter</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <fields>      <field>        <name>timestamp</name>
+        <rename>start</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>job_id</name>
+        <rename>service_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>instance_id</name>
+        <rename>session_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>object_id</name>
+        <rename>content_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>object_type</name>
+        <rename>engine_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>actor</name>
+        <rename>user</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>message_name</name>
+        <rename>instance_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>duration</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      </fields>    <GUI>
+      <xloc>639</xloc>
+      <yloc>343</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Instance start table</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <connection>Pentaho Audit</connection>
+    <table>INSTANCES</table>
+    <commit>5000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <GUI>
+      <xloc>905</xloc>
+      <yloc>341</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Java Script Value</name>
+    <type>ScriptValue</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <script>var status = &apos;success&apos;; 
+var message = &apos;&apos;;
+var session_id = &apos;&apos;;
+var session_type = &apos;&apos;;
+var instance_duration = 0;
+</script>
+    <fields>      <field>        <name>session_id</name>
+        <rename>session_id</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>status</name>
+        <rename>status</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>message</name>
+        <rename>message</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>session_type</name>
+        <rename>session_type</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>instance_duration</name>
+        <rename>instance_duration</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        </field>      </fields>    <GUI>
+      <xloc>769</xloc>
+      <yloc>634</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Java Script Value 2</name>
+    <type>ScriptValue</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <script>var status = &apos;fail&apos;;</script>
+    <fields>      <field>        <name>status</name>
+        <rename>status</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      </fields>    <GUI>
+      <xloc>772</xloc>
+      <yloc>737</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Java Script Value 3</name>
+    <type>ScriptValue</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <script>var status = &apos;unknown&apos;; 
+var message = &apos;&apos;;
+
+var when = start.getDate();
+var hour = when.getHours();
+var dayOfWeek = when.getDay();
+var dayOfMonth = when.getDate();
+var year = when.getYear() + 1900;
+var month = when.getMonth();
+
+</script>
+    <fields>      <field>        <name>status</name>
+        <rename>status</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>hour</name>
+        <rename>hour</rename>
+        <type>Integer</type>
+        <length>9</length>
+        <precision>0</precision>
+        </field>      <field>        <name>dayOfWeek</name>
+        <rename>dayOfWeek</rename>
+        <type>Integer</type>
+        <length>9</length>
+        <precision>0</precision>
+        </field>      <field>        <name>message</name>
+        <rename>message</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      <field>        <name>dayOfMonth</name>
+        <rename>dayOfMonth</rename>
+        <type>Integer</type>
+        <length>9</length>
+        <precision>0</precision>
+        </field>      <field>        <name>year</name>
+        <rename>year</rename>
+        <type>Integer</type>
+        <length>4</length>
+        <precision>0</precision>
+        </field>      <field>        <name>month</name>
+        <rename>month</rename>
+        <type>Integer</type>
+        <length>2</length>
+        <precision>0</precision>
+        </field>      </fields>    <GUI>
+      <xloc>775</xloc>
+      <yloc>344</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Java Script Value 4</name>
+    <type>ScriptValue</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <script>var status = &apos;success&apos;;
+</script>
+    <fields>      <field>        <name>status</name>
+        <rename>status</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      </fields>    <GUI>
+      <xloc>769</xloc>
+      <yloc>439</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Java Script Value 4 2</name>
+    <type>ScriptValue</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <script>var status = &apos;fail&apos;;
+</script>
+    <fields>      <field>        <name>status</name>
+        <rename>status</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        </field>      </fields>    <GUI>
+      <xloc>769</xloc>
+      <yloc>538</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Session start</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+<send_true_to>Session start filter</send_true_to>
+<send_false_to>Instance Start</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>message_type</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+<value>     <name>constant</name><type>String</type><text>session_start</text><length>-1</length><precision>-1</precision><isnull>N</isnull>  </value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+    <GUI>
+      <xloc>483</xloc>
+      <yloc>238</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Session start filter</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <fields>      <field>        <name>timestamp</name>
+        <rename>start</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>instance_id</name>
+        <rename>session_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>object_type</name>
+        <rename>session_type</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      <field>        <name>actor</name>
+        <rename>user_id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+        </field>      </fields>    <GUI>
+      <xloc>636</xloc>
+      <yloc>238</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Session table</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <connection>Pentaho Audit</connection>
+    <table>SESSIONS</table>
+    <commit>5000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <GUI>
+      <xloc>1100</xloc>
+      <yloc>275</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file input</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <separator>	</separator>
+    <enclosure/>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>N</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownum_field/>
+    <format>Unix</format>
+    <encoding/>
+    <file>
+      <name>%%pentaho-solutions%%/system/logs/audit/PentahoAuditLog.log</name>
+      <filemask/>
+      <file_required>N</file_required>
+      <type>CSV</type>
+      <zipped>N</zipped>
+      </file>
+    <filters>
+      </filters>
+    <fields>
+      <field>
+        <name>timestamp</name>
+        <type>Date</type>
+        <format>yyyy/MM/dd k:mm:ss</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>job_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>instance_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>object_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>object_type</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>actor</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>message_type</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>message_name</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>message_text_value</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>message_num_value</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      <field>
+        <name>duration</name>
+        <type>BigNumber</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>4</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        </field>
+      </fields>
+    <limit>0</limit>
+    <error_ignored>Y</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension/>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension/>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension/>
+    <date_format_lenient>N</date_format_lenient>
+    <date_format_locale>en_us</date_format_locale>
+    <GUI>
+      <xloc>91</xloc>
+      <yloc>53</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Rows</name>
+    <type>MergeRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <keys>
+    </keys>
+    <values>
+      <value>start</value>
+      <value>session_id</value>
+      <value>session_type</value>
+      <value>user_id</value>
+    </values>
+<flag_field>merge_status</flag_field>
+<reference>Table input</reference>
+<compare>Session start filter</compare>
+    <compare>
+    </compare>
+    <GUI>
+      <xloc>785</xloc>
+      <yloc>164</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <connection>Pentaho Audit</connection>
+    <sql>SELECT
+  start
+, session_id
+, session_type
+, user_id
+FROM SESSIONS
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <GUI>
+      <xloc>641</xloc>
+      <yloc>108</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+<send_true_to>Select values</send_true_to>
+<send_false_to>Text file output</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>merge_status</leftvalue>
+ <function>=</function>
+ <rightvalue/>
+<value>   <name>constant</name><type>String</type><text>new</text><length>-1</length><precision>-1</precision><isnull>N</isnull>  </value> </condition>
+    </compare>
+    <GUI>
+      <xloc>905</xloc>
+      <yloc>156</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <separator>;</separator>
+    <enclosure>&quot;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <encoding/>
+    <endedLine/>
+    <file>
+      <name>dups</name>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <zipped>N</zipped>
+      <pad>N</pad>
+      <splitevery>0</splitevery>
+      </file>
+    <fields>
+      </fields>
+    <GUI>
+      <xloc>921</xloc>
+      <yloc>54</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <fields>      <remove>        <name>merge_status</name>
+        </remove>      </fields>    <GUI>
+      <xloc>999</xloc>
+      <yloc>211</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+</transformation>

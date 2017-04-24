@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-sequence> 
+  <title>%title</title>
+  <version>1</version>
+  <logging-level>ERROR</logging-level>
+  <documentation> 
+    <author>Angelo Rodriguez</author>  
+    <description>%description</description>  
+    <help/>  
+    <result-type/>  
+    <icon>generic_admin.png</icon> 
+  </documentation>
+
+  <inputs/>
+
+  <outputs/>
+
+  <resources> 
+    <job-file> 
+      <solution-file> 
+        <location>audit/AuditTransform.kjb</location>  
+        <mime-type>text/plain</mime-type> 
+      </solution-file> 
+    </job-file> 
+  </resources>
+  
+  <actions> 
+    <action-definition> 
+      <component-name>KettleComponent</component-name>
+      <action-type>Pentaho Data Integration Job</action-type>
+      <action-resources> 
+        <job-file type="resource"/> 
+      </action-resources>
+      <component-definition/> 
+    </action-definition>
+ 
+  </actions> 
+</action-sequence>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportRecord xmlns="http://www.pentaho.com">
+    <commonStorageAttributes update="2014-01-24T09:31:18" created="2014-01-23T05:29:47" updatedBy="nagraj.rao@sigmainfo.net" createdBy="nagraj.rao@sigmainfo.net">
+        <path folder="AESES/UNUSED/AncillaryReportMarketsStatus.xanalyzer" name="AncillaryReportMarketsStatus"/>
+    </commonStorageAttributes>
+    <report freezeRows="true" freezeColumns="true" autoRefresh="true" version="7" showDrillLinks="false" emptyCellDisplay="-" showEmptyCells="false" useNonVisualTotals="false" showColumnGrandTotal="false" showRowGrandTotal="false" reportTypeEnum="PIVOT" cube="MarketDataStatus" catalog="MarketDataStatus">
+        <measures/>
+        <columnAttributes/>
+        <rowAttributes>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[iso].[iso]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="ISO" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[market].[market]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Market" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[service].[service]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Service" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[zone].[zone]"/>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[maxdate].[maxdate]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Latest Date" locale=""/>
+                </displayLabels>
+            </attribute>
+            <attribute sortOrderEnum="ASC" showSubtotal="false" formula="[status].[status]">
+                <displayLabels>
+                    <displayLabel labelPlural="" label="Status" locale=""/>
+                </displayLabels>
+            </attribute>
+        </rowAttributes>
+        <filters>
+            <filter viewFilterEnum="MULTIPLE" formula="[iso].[iso]">
+                <predicates>
+                    <predicate operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="CAISO" formula="[iso].[CAISO]"/>
+                        <member pos="0" caption="ERCOT" formula="[iso].[ERCOT]"/>
+                        <member pos="0" caption="ISO-NE" formula="[iso].[ISO-NE]"/>
+                        <member pos="0" caption="MISO" formula="[iso].[MISO]"/>
+                        <member pos="0" caption="NYISO" formula="[iso].[NYISO]"/>
+                        <member pos="0" caption="PJM" formula="[iso].[PJM]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+            <filter viewFilterEnum="MULTIPLE" formula="[market].[market]">
+                <predicates>
+                    <predicate operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="Day-Ahead Regulation" formula="[market].[Day-Ahead Regulation]"/>
+                        <member pos="0" caption="Real-Time Regulation" formula="[market].[Real-Time Regulation]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+            <filter viewFilterEnum="MULTIPLE" formula="[service].[service]">
+                <predicates>
+                    <predicate operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="Regulation" formula="[service].[Regulation]"/>
+                        <member pos="0" caption="RegulationA" formula="[service].[RegulationA]"/>
+                        <member pos="0" caption="RegulationD" formula="[service].[RegulationD]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+            <filter viewFilterEnum="MULTIPLE" formula="[zone].[zone]">
+                <predicates>
+                    <predicate operatorEnum="EQUAL" ordinal="1">
+                        <member pos="0" caption="All" formula="[zone].[All]"/>
+                        <member pos="0" caption="East" formula="[zone].[East]"/>
+                        <member pos="0" caption="ISO-NE" formula="[zone].[ISO-NE]"/>
+                        <member pos="0" caption="Zone 3" formula="[zone].[Zone 3]"/>
+                    </predicate>
+                </predicates>
+            </filter>
+        </filters>
+        <chartOptions legendFontFamily="Default" labelFontFamily="Default" legendStyle="PLAIN" legendColor="#000000" legendSize="12" legendBackgroundColor="#ffffff" labelStyle="PLAIN" backgroundColorEnd="#ffffff" maxChartsPerRow="3" backgroundFill="NONE" labelSize="12" labelColor="#000000" backgroundColor="#ffffff" maxValues="100" lineShape="CIRCLE" lineWidth="2" displayUnitsSecondary="UNITS_0" autoRangeSecondary="true" displayUnits="UNITS_0" autoRange="true" showLegend="true" legendPosition="RIGHT" customChartType="ccc_bar" chartType="CUSTOM"/>
+        <selectionFilters/>
+        <selectionItems/>
+        <pageSetup excelScalingPageTall="1" excelScalingPageWide="1" excelScalingPercent="100" excelScalingType="PERCENT" pdfOrientation="LANDSCAPE" excelOrientation="LANDSCAPE" pdfPageSize="LETTER" excelPageSize="LETTER"/>
+    </report>
+    <uiAttributes showFilterPanel="false" showFieldLayout="false" showFieldList="false">
+        <rowFieldWidths actualWidths="80,129,80,80,80,80"/>
+        <columnDataFieldWidths actualWidths=""/>
+        <pluginData>[]</pluginData>
+    </uiAttributes>
+</reportRecord>

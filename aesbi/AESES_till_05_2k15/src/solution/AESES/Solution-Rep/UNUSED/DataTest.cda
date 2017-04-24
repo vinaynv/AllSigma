@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="MaxDate" type="mondrian.jndi">
+         <Catalog>/AESES/Fleet_cube.xml</Catalog>
+         <Jndi>aeses</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="MaxDate"
+               id="MaxDate"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters/>
+      <Query>With&#xD;
+Set [*NATIVE_CJ_SET] as 'Tail(NonEmptyCrossJoin([*BASE_MEMBERS_Project],[*BASE_MEMBERS_Date.Calendar]),31)'&#xD;
+Set [*BASE_MEMBERS_Project] as '{[Project].[Tait]}'&#xD;
+Set [*SORTED_COL_AXIS] as 'Order([*CJ_COL_AXIS],[Project].CurrentMember.OrderKey,BASC)'&#xD;
+Set [*BASE_MEMBERS_Date.Calendar] as 'Filter([Date.Calendar].[Days].Members,(Ancestor([Date.Calendar].CurrentMember, [Date.Calendar].[Years]) In {[Date.Calendar].[2014]}) OR (Ancestor([Date.Calendar].CurrentMember, [Date.Calendar].[Years]) In {[Date.Calendar].[2013]}))'&#xD;
+Set [*BASE_MEMBERS_Measures] as '{[Measures].[*FORMATTED_MEASURE_1],[Measures].[*FORMATTED_MEASURE_0]}'&#xD;
+Set [*CJ_ROW_AXIS] as 'Generate([*NATIVE_CJ_SET], {([Date.Calendar].currentMember)})'&#xD;
+Set [*SORTED_ROW_AXIS] as 'Order([*CJ_ROW_AXIS],Ancestor([Date.Calendar].CurrentMember, [Date.Calendar].[Years]).OrderKey,BASC,Ancestor([Date.Calendar].CurrentMember, [Date.Calendar].[Quarters]).OrderKey,BASC,Ancestor([Date.Calendar].CurrentMember, [Date.Calendar].[Months]).OrderKey,BASC,[Date.Calendar].CurrentMember.OrderKey,BASC)'&#xD;
+Set [*CJ_COL_AXIS] as 'Generate([*NATIVE_CJ_SET], {([Project].currentMember)})'&#xD;
+Member [Measures].[*FORMATTED_MEASURE_1] as '[Measures].[Energy Throughput (MWh/yr/MW)]', FORMAT_STRING = '##0.00', SOLVE_ORDER=400&#xD;
+Member [Measures].[*FORMATTED_MEASURE_0] as '[Measures].[C-rate]', FORMAT_STRING = '##0.00', SOLVE_ORDER=400&#xD;
+Select&#xD;
+CrossJoin([*SORTED_COL_AXIS],[*BASE_MEMBERS_Measures]) on columns,&#xD;
+Non Empty [*SORTED_ROW_AXIS] on rows&#xD;
+From [Fleet Cube]</Query>
+   </DataAccess>
+</CDADescriptor>

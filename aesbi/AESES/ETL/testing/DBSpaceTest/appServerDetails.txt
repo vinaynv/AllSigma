@@ -1,0 +1,4 @@
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda1              15G   11G  3.3G  77% /
+none                  874M  4.0K  874M   1% /dev/shm
+/dev/sdf               99G   21G   73G  23% /usr/local/data
