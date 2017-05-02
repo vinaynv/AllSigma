@@ -1,0 +1,28 @@
+There are 3 things in this.
+1)GoogleSpreadsheetDownload ktr file:
+	In this u have give 4 things to modify.
+	
+	fd.filedownload("D:\\drive_sample", "file.xls","1vSXs0GkM9uu6fP0RqZV-iqBIAgf7G2QJ5c4XfzcN04M","D:\\drive_sample\\client_secrets.json");
+	
+	D:\\drive_sample>>>> folder path where you have to download.
+	file.xls>>>>  file name to save downloaded.
+	1vSXs0GkM9uu6fP0RqZV-iqBIAgf7G2QJ5c4XfzcN04M>>>>  id of spread sheet in the google docs.
+	D:\\drive_sample\\client_secrets.json >>>>   path of the client_secrets.json file where you have kept it.This file is used for authentication of the user.
+											This file must be there.It will give path authentication and is used for storing the user 
+											credential for first time.
+											
+
+2)client_secrets.json  json file
+	
+	It must be there.This file is used for authentication of the user.
+	It will give path for authentication and is used for storing the user credential for first time.you should provide this file path in kr file
+	
+	
+3)libext
+
+	It has many jars.
+	googleSpreadSheetDownloader jar is important jar.It is developed and converted to jar locally.
+	
+4) launcher.properties 
+	It should be given data-integration\launcher 
+		It is used to read the jars placed in other folder. 
