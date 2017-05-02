@@ -1,0 +1,21 @@
+https://github.com/prakhar1989/docker-curriculum
+
+https://docs.docker.com/engine/tutorials/dockerimages/
+
+http://diethardsteiner.github.io/pdi/2016/04/21/PDI-Docker-Part-1.html
+
+https://github.com/aloysius-lim/docker-pentaho-di/blob/master/docker/docker-entrypoint.sh
+https://github.com/wmarinho/docker-pentaho
+https://github.com/aloysius-lim/docker-pentaho-di
+
+
+
+https://www.digitalocean.com/community/tags/docker?type=tutorials
+http://forums.pentaho.com/showthread.php?165218-Pentaho-Rapid-Deployment-with-Docker
+
+
+
+modify http://support.dominodatalab.com/hc/en-us/articles/207051176-Modifying-Docker-Images-Directly
+
+
+https://github.com/wsargent/docker-cheat-sheet#dockerfile

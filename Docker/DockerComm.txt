@@ -1,0 +1,104 @@
+To RUN images:
+docker run -t -i vinaynv/pentaho
+
+docker run -t -i vinaynv/pentaho /bin/bash
+
+docker run  -t -i -p 8888:8080  vinaynv/pentaho /bin/bash
+
+
+To commit:
+docker commit b97358bbb62f  vinaynv/pentaho6.1:1407
+
+To see containers running:
+docker ps
+
+To see all containers
+docker ps -a
+
+to know more about container:
+docker inspect
+
+to clear all containers:
+docker ps -a | grep 'ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm
+
+To Stop containers:
+docker stop 4b0d9fd9b3d0
+
+To run containers:
+docker rm 4b0d9fd9b3d0
+
+To build containers:
+docker build -t name:tag
+
+to get into container
+docker exec -ti 95176d89b226 /bin/bash
+
+To copy files to the containers:
+docker cp /home/vinay/pentaho-dockerfile/startup.sh b69bb18c0183:/
+
+to get ip address if containers:
+docker inspect -f '{{ .NetworkSettings.IPAddress }}' nostalgic_morse
+
+to tag containers to the image:
+docker tag 03419f0ebb31 vinaynv/ubuntu:v114.04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker cp /home/vinay/pentaho_image2/context.xml 594d3a7a9ff6:/home/Sigma/Pentaho/server/biserver-ee/tomcat/webapps/pentaho/META-INF/
+
+docker cp /home/vinay/pentaho_image2/web.xml 594d3a7a9ff6:/home/Sigma/Pentaho/server/biserver-ee/tomcat/webapps/pentaho/WEB-INF/
+
+docker cp /home/vinay/pentaho_image2/jdbc.properties 594d3a7a9ff6:/home/Sigma/Pentaho/design-tools/data-integration/simple-jndi/
+
+docker cp /home/vinay/pentaho_image2/default.properties 594d3a7a9ff6:/home/Sigma/Pentaho/design-tools/report-designer/configuration-template/simple-jndi/
+
+
+docker cp /home/vinay/pentaho_image2/tr1.ktr 74ec3a74c1c5:/home/telco/project
+
+
+
+/home/Sigma/Pentaho/server/biserver-ee/tomcat/webapps/pentaho/META-INF/context.xml
+
+/home/Sigma/Pentaho/server/biserver-ee/tomcat/webapps/pentaho/WEB-INF/web.xml
+
+
+/home/Sigma/Pentaho/design-tools/data-integration/simple-jndi/jdbc.properties
+
+/home/Sigma/Pentaho/design-tools/report-designer/configuration-template/simple-jndi/default.properties
+
+
+docker cp /home/pentaho 499e052bae78:/home/Sigma/Pentaho/server/biserver-ee/tomcat/webapps/
+
+docker cp /home/test/login-crystal-bg.jpeg 499e052bae78:/home/Sigma/Pentaho/server/biserver-ee/pentaho-solutions/system/common-ui/resources/themes/crystal/images/
+
+docker cp /home/test/puc-login-logo.png 499e052bae78:/home/Sigma/Pentaho/server/biserver-ee/pentaho-solutions/system/common-ui/resources/themes/images
+
+docker cp /home/test/favicon.ico 499e052bae78:/home/Sigma/Pentaho/server/biserver-ee/tomcat/webapps/ROOT
+
+docker cp /home/test/logo.ico 499e052bae78:/home/Sigma/Pentaho/server/biserver-ee/tomcat/webapps/pentaho-style
+
+docker cp /home/test/globalCrystal.css 499e052bae78:/home/Sigma/Pentaho/server/biserver-ee/pentaho-solutions/system/common-ui/resources/themes/crystal
+
+
+
+
+
+sh kitchen.sh -file=/home/telco/project/tr1.ktr
+
+
+
+:/home/Sigma/Pentaho/design-tools/data-integration
